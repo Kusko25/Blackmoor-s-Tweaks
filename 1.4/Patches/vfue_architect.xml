@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Furniture Expanded - Architect</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="VFEArch_ArmoredWall"]/damageMultipliers</xpath>
+            <value>
+                <li>
+                    <damageDef>Vaporize</damageDef>
+                    <multiplier>0.05</multiplier>
+                </li>
+            </value>
+        </match>
+    </Operation>
+</Patch>

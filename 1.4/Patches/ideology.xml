@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Ideology</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationRemove">
+          <xpath>Defs/PreceptDef[defName="FungusEating_Preferred"]/comps/li[eventDef="AteNonFungusPlant"]</xpath>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>Defs/PreceptDef[defName="FungusEating_Preferred"]/comps/li[eventDef="AteNonFungusMealWithPlants"]</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+</Patch>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Biotech Cloning</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationRemove">
+          <xpath>Defs/PawnRelationDef[defName="CloneChild"]/incestOpinionOffset</xpath>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>Defs/PawnRelationDef[defName="CloneChild"]/inbredChanceOnChild</xpath>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>Defs/PawnRelationDef[defName="CloneDonor"]/incestOpinionOffset</xpath>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>Defs/PawnRelationDef[defName="CloneDonor"]/inbredChanceOnChild</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+</Patch>

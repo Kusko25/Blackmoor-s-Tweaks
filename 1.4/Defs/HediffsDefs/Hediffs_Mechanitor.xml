@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef Abstract="True" Name="MechanitorImplantBase">
+        <thingClass>ThingWithComps</thingClass>
+        <category>Item</category>
+        <drawerType>MapMeshOnly</drawerType>
+        <techLevel>Archotech</techLevel>
+        <useHitPoints>true</useHitPoints>
+        <pathCost>14</pathCost>
+        <selectable>true</selectable>
+        <altitudeLayer>Item</altitudeLayer>
+        <tickerType>Never</tickerType>
+        <alwaysHaulable>true</alwaysHaulable>
+        <resourceReadoutPriority>Middle</resourceReadoutPriority>
+        <thingCategories>
+        <li>BodyPartsMechtech</li>
+        </thingCategories>
+        <comps>
+        <li Class="CompProperties_UseEffectDestroySelf" />
+        </comps>
+    </ThingDef>
+    <!-- Band sublink -->
+    <ThingDef Abstract="True" Name="BandMemoryBase" ParentName="MechanitorImplantCraftableBase">
+    <descriptionHyperlinks><HediffDef>BandMemoryImplant</HediffDef></descriptionHyperlinks>
+    <statBases>
+        <MaxInstallCount>3</MaxInstallCount>
+    </statBases>
+    </ThingDef>
+
+    <ThingDef ParentName="BandMemoryBase">
+    <defName>BandMemory</defName>
+    <label>band memory shard (standard)</label>
+    <description>A neural implant which increases mechanitor bandwith by 1. \n\nThis standard-tier memory shard can only increase the bandwidth up to 3. To go higher, a higher-tier band memory implant must be used.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 3 times to increase its effect.</description>
+    <costList>
+        <Plasteel>10</Plasteel>
+        <Steel>20</Steel>
+        <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+        <researchPrerequisite>StandardMechtech</researchPrerequisite>
+    </recipeMaker>
+    <comps>
+        <li Class="CompProperties_Usable">
+        <compClass>CompUsableImplant</compClass>
+        <useJob>UseItem</useJob>
+        <useLabel>Implant bandmemory</useLabel>
+        <userMustHaveHediff>MechlinkImplant</userMustHaveHediff>
+        </li>
+        <li Class="CompProperties_UseEffectInstallImplant">
+        <hediffDef>BandMemoryImplant</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <canUpgrade>true</canUpgrade>
+        <maxSeverity>3</maxSeverity>
+        </li>
+    </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="BandMemoryBase">
+    <defName>BandMemoryHigh</defName>
+    <label>band memory shard (high)</label>
+    <description>A neural implant which increases mechanitor bandwith by 2. \n\nThis high-tier memory shard can increase the bandwidth up to 9. To go higher, a higher-tier band memory implant must be used.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 3 times to increase its effect.</description>
+    <costList>
+        <Plasteel>10</Plasteel>
+        <Steel>20</Steel>
+        <ComponentIndustrial>3</ComponentIndustrial>
+        <ComponentSpacer>3</ComponentSpacer>
+    </costList>
+    <recipeMaker>
+        <researchPrerequisite>HighMechtech</researchPrerequisite>
+    </recipeMaker>
+    <comps>
+        <li Class="CompProperties_Usable">
+        <compClass>CompUsableImplant</compClass>
+        <useJob>UseItem</useJob>
+        <useLabel>Implant high band memory</useLabel>
+        <userMustHaveHediff>MechlinkImplant</userMustHaveHediff>
+        </li>
+        <li Class="CompProperties_UseEffectInstallImplant">
+        <hediffDef>BandMemoryImplant</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <canUpgrade>true</canUpgrade>
+        <requiresExistingHediff>true</requiresExistingHediff>
+        <minSeverity>3</minSeverity>
+        </li>
+    </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="BandMemoryBase">
+    <defName>BandMemoryUltra</defName>
+    <label>band memory shard (ultra)</label>
+    <description>A neural implant which increases mechanitor bandwith by 3. \n\nThis ultra-tier memory shard maximizes the bandwidth up to 18.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 3 times to increase its effect.</description>
+    <costList>
+        <Plasteel>10</Plasteel>
+        <Steel>20</Steel>
+        <Uranium>5</Uranium>
+        <ComponentSpacer>2</ComponentSpacer>
+        <PowerfocusChip>1</PowerfocusChip>
+    </costList>
+    <recipeMaker>
+        <researchPrerequisite>UltraMechtech</researchPrerequisite>
+    </recipeMaker>
+    <comps>
+        <li Class="CompProperties_Usable">
+        <compClass>CompUsableImplant</compClass>
+        <useJob>UseItem</useJob>
+        <useLabel>Implant ultra band memory</useLabel>
+        <userMustHaveHediff>MechlinkImplant</userMustHaveHediff>
+        </li>
+        <li Class="CompProperties_UseEffectInstallImplant">
+        <hediffDef>BandMemoryImplant</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <canUpgrade>true</canUpgrade>
+        <requiresExistingHediff>true</requiresExistingHediff>
+        <minSeverity>6</minSeverity>
+        </li>
+    </comps>
+    </ThingDef>
+
+    <HediffDef>
+    <defName>BandMemoryImplant</defName>
+    <hediffClass>Hediff_Level</hediffClass>
+    <descriptionHyperlinks><ThingDef>BandMemory</ThingDef></descriptionHyperlinks>
+    <label>band memory</label>
+    <description>An implant which increases a mechanitor's bandwidth.\n\nThis implant can be installed up to 9 times to increase its effect.</description>
+    <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
+    <isBad>false</isBad>
+    <priceImpact>true</priceImpact>
+    <initialSeverity>1</initialSeverity> <!-- Severity is bound to level of implant -->
+    <minSeverity>0</minSeverity>
+    <maxSeverity>9</maxSeverity>
+    <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+    <levelIsQuantity>true</levelIsQuantity>
+    <stages>
+        <li>
+        <minSeverity>1</minSeverity>
+        <statOffsets>
+            <MechBandwidth>1</MechBandwidth>
+        </statOffsets>
+        </li>
+        <li>
+        <minSeverity>2</minSeverity>
+        <statOffsets>
+            <MechBandwidth>2</MechBandwidth>
+        </statOffsets>
+        </li>
+        <li>
+        <minSeverity>3</minSeverity>
+        <statOffsets>
+            <MechBandwidth>3</MechBandwidth>
+        </statOffsets>
+        </li>
+        <li>
+        <minSeverity>4</minSeverity>
+        <statOffsets>
+            <MechBandwidth>5</MechBandwidth>
+        </statOffsets>
+        </li>
+        <li>
+        <minSeverity>5</minSeverity>
+        <statOffsets>
+            <MechBandwidth>7</MechBandwidth>
+        </statOffsets>
+        </li>
+        <li>
+        <minSeverity>6</minSeverity>
+        <statOffsets>
+            <MechBandwidth>9</MechBandwidth>
+        </statOffsets>
+        </li>
+        <li>
+        <minSeverity>7</minSeverity>
+        <statOffsets>
+            <MechBandwidth>12</MechBandwidth>
+        </statOffsets>
+        </li>
+        <li>
+        <minSeverity>8</minSeverity>
+        <statOffsets>
+            <MechBandwidth>15</MechBandwidth>
+        </statOffsets>
+        </li>
+        <li>
+        <minSeverity>9</minSeverity>
+        <statOffsets>
+            <MechBandwidth>18</MechBandwidth>
+        </statOffsets>
+        </li>
+    </stages>
+    </HediffDef>
+
+    <ThingDef Abstract="True" Name="MechanitorImplantCraftableBase" ParentName="MechanitorImplantBase">
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Beauty>-4</Beauty>
+      <Mass>1</Mass>
+      <MarketValue>1200</MarketValue>
+      <DeteriorationRate>0</DeteriorationRate>
+      <WorkToMake>3200</WorkToMake>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.80</drawSize>
+      <color>(154,124,104)</color>
+    </graphicData>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedHealthItemProsthetic</unfinishedThingDef>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
+      <useIngredientsForColor>false</useIngredientsForColor>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+      <displayPriority>650</displayPriority>
+    </recipeMaker>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+    <tradeability>Sellable</tradeability>
+  </ThingDef>
+</Defs>

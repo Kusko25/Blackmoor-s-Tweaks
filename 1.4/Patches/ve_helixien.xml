@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Helixien Gas Expanded</li>
+        </mods>
+        <match Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="VHGE_Helixien"]/deepCountPerCell</xpath>
+            <value>
+                <deepCountPerCell>21000</deepCountPerCell>
+            </value>
+        </match>
+    </Operation>
+</Patch>

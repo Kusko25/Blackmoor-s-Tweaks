@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Factions Expanded - Mechanoids</li>
+      <li>Rimefeller</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs</xpath>
+          <value>
+            <ItemProcessor.CombinationDef MayRequire="OskarPotocki.VFE.Mechanoid">
+              <defName>VFEM_VersatileAssembler_Synthread</defName>
+              <building>VFEM_VersatileAssembler</building>
+              <items>
+                <li>Chemfuel</li>
+              </items>	
+              <secondItems>
+                <li>Chemfuel</li>
+              </secondItems>
+              <thirdItems>
+                <li>Chemfuel</li>
+              </thirdItems>
+              <amount>
+                <li>100</li>
+                <li>100</li>
+                <li>100</li>
+              </amount>
+              <outputLimitControlled>true</outputLimitControlled>
+              <maxTotalOutput>300</maxTotalOutput>
+              <result>Synthread</result>	
+              <yield>90</yield>		
+              <useQualityIncreasing>false</useQualityIncreasing>
+              <singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+            </ItemProcessor.CombinationDef>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs</xpath>
+          <value>
+            <ItemProcessor.CombinationDef MayRequire="OskarPotocki.VFE.Mechanoid">
+              <defName>VFEM_VersatileAssembler_Hyperweave</defName>
+              <building>VFEM_VersatileAssembler</building>
+              <items>
+                <li>Chemfuel</li>
+              </items>	
+              <secondItems>
+                <li>Chemfuel</li>
+              </secondItems>
+              <thirdItems>
+                <li>Chemfuel</li>
+              </thirdItems>
+              <amount>
+                <li>200</li>
+                <li>200</li>
+                <li>200</li>
+              </amount>
+              <outputLimitControlled>true</outputLimitControlled>
+              <maxTotalOutput>300</maxTotalOutput>
+              <result>Hyperweave</result>	
+              <yield>90</yield>		
+              <useQualityIncreasing>false</useQualityIncreasing>
+              <singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+            </ItemProcessor.CombinationDef>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs</xpath>
+          <value>
+            <ItemProcessor.CombinationDef MayRequire="OskarPotocki.VFE.Mechanoid">
+              <defName>VFEM_VersatileAssembler_Napalm</defName>
+              <building>VFEM_VersatileAssembler</building>
+              <items>
+                <li>Synthylene</li>
+              </items>	
+              <secondItems>
+                <li>Chemfuel</li>
+              </secondItems>
+              <thirdItems>
+                <li>Chemfuel</li>
+              </thirdItems>
+              <amount>
+                <li>25</li>
+                <li>25</li>
+                <li>25</li>
+              </amount>
+              <outputLimitControlled>true</outputLimitControlled>
+              <maxTotalOutput>300</maxTotalOutput>
+              <result>Napalm</result>	
+              <yield>50</yield>		
+              <useQualityIncreasing>false</useQualityIncreasing>
+              <singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+            </ItemProcessor.CombinationDef>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs</xpath>
+          <value>
+            <ItemProcessor.CombinationDef MayRequire="OskarPotocki.VFE.Mechanoid">
+              <defName>VFEM_VersatileAssembler_Synthamide</defName>
+              <building>VFEM_VersatileAssembler</building>
+              <items>
+                <li>Chemfuel</li>
+              </items>	
+              <secondItems>
+                <li>Chemfuel</li>
+              </secondItems>
+              <thirdItems>
+                <li>Chemfuel</li>
+              </thirdItems>
+              <amount>
+                <li>50</li>
+                <li>50</li>
+                <li>50</li>
+              </amount>
+              <outputLimitControlled>true</outputLimitControlled>
+              <maxTotalOutput>300</maxTotalOutput>
+              <result>Synthamide</result>	
+              <yield>75</yield>		
+              <useQualityIncreasing>false</useQualityIncreasing>
+              <singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+            </ItemProcessor.CombinationDef>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs</xpath>
+          <value>
+            <ItemProcessor.CombinationDef MayRequire="OskarPotocki.VFE.Mechanoid">
+              <defName>VFEM_VersatileAssembler_Synthylene</defName>
+              <building>VFEM_VersatileAssembler</building>
+              <items>
+                <li>Chemfuel</li>
+              </items>	
+              <secondItems>
+                <li>Chemfuel</li>
+              </secondItems>
+              <thirdItems>
+                <li>Chemfuel</li>
+              </thirdItems>
+              <amount>
+                <li>20</li>
+                <li>20</li>
+                <li>20</li>
+              </amount>
+              <outputLimitControlled>true</outputLimitControlled>
+              <maxTotalOutput>300</maxTotalOutput>
+              <result>Synthylene</result>	
+              <yield>20</yield>		
+              <useQualityIncreasing>false</useQualityIncreasing>
+              <singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+            </ItemProcessor.CombinationDef>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs</xpath>
+          <value>
+            <ItemProcessor.CombinationDef MayRequire="OskarPotocki.VFE.Mechanoid">
+              <defName>VFEM_VersatileAssembler_Uncured_SynthamideComp</defName>
+              <building>VFEM_VersatileAssembler</building>
+              <items>
+                <li>Chemfuel</li>
+              </items>	
+              <secondItems>
+                <li>Synthylene</li>
+              </secondItems>
+              <thirdItems>
+                <li>Synthamide</li>
+              </thirdItems>
+              <amount>
+                <li>40</li>
+                <li>50</li>
+                <li>25</li>
+              </amount>
+              <outputLimitControlled>true</outputLimitControlled>
+              <maxTotalOutput>300</maxTotalOutput>
+              <result>UncuredComposite</result>	
+              <yield>25</yield>		
+              <useQualityIncreasing>false</useQualityIncreasing>
+              <singleTimeIfNotQualityIncreasing>0.5</singleTimeIfNotQualityIncreasing>
+            </ItemProcessor.CombinationDef>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs</xpath>
+          <value>
+            <ItemProcessor.CombinationDef MayRequire="OskarPotocki.VFE.Mechanoid">
+              <defName>VFEM_VersatileAssembler_Uncured_Plasteel</defName>
+              <building>VFEM_VersatileAssembler</building>
+              <items>
+                <li>Chemfuel</li>
+              </items>	
+              <secondItems>
+                <li>Synthylene</li>
+              </secondItems>
+              <thirdItems>
+                <li>Steel</li>
+              </thirdItems>
+              <amount>
+                <li>40</li>
+                <li>50</li>
+                <li>25</li>
+              </amount>
+              <outputLimitControlled>true</outputLimitControlled>
+              <maxTotalOutput>300</maxTotalOutput>
+              <result>UncuredPlasteel</result>	
+              <yield>25</yield>
+              <useQualityIncreasing>false</useQualityIncreasing>
+              <singleTimeIfNotQualityIncreasing>0.5</singleTimeIfNotQualityIncreasing>
+            </ItemProcessor.CombinationDef>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+</Patch>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Eltex Bodysuit (Continued)</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_EltexBodysuit"]/costList</xpath>
+        <value>
+              <VPE_Eltex MayRequire="VanillaExpanded.VPsycastsE">4</VPE_Eltex> 
+        </value>
+    </match>
+  </Operation>
+
+</Patch>

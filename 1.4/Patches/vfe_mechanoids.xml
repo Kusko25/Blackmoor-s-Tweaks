@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Factions Expanded - Ancients</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[@Name="VFEA_WallLampBaseA"]/comps</xpath>
+            <value>
+                <li Class="CompProperties_Glower">
+                    <glowRadius>12</glowRadius>
+                    <glowColor>(214,148,94,0)</glowColor>
+                    <colorPickerEnabled>true</colorPickerEnabled>
+                    <darklightToggle>true</darklightToggle>
+                </li>
+            </value>
+        </match>
+    </Operation>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Factions Expanded - Mechanoids</li>
+            <li>Dubs Bad Hygiene</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs</xpath>
+            <value>
+            <ItemProcessor.CombinationDef MayRequire="OskarPotocki.VFE.Mechanoid">
+                <defName>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier_WasteRecipe</defName>
+                <building>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier</building>
+                <items>
+                <li>FecalSludge</li>
+                </items>
+                <amount>
+                <li>75</li>
+                </amount>
+                <outputLimitControlled>true</outputLimitControlled>
+                <maxTotalOutput>300</maxTotalOutput>
+                <result>Chemfuel</result>	
+                <yield>35</yield>		
+                <useQualityIncreasing>false</useQualityIncreasing>
+                <singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+            </ItemProcessor.CombinationDef>
+            </value>
+        </match>
+    </Operation>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Factions Expanded - Mechanoids</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs</xpath>
+            <value>
+            <ItemProcessor.CombinationDef MayRequire="Ludeon.Rimworld.Biotech">
+                <defName>VFEM_MunitionsAndArmamentFactory_ArtilleryFoundry_Shell_Toxic</defName>
+                <building>VFEM_MunitionsAndArmamentFactory_ArtilleryFoundry</building>
+                <items>
+                    <li>Steel</li>
+                </items>	
+                <secondItems>
+                    <li>Chemfuel</li>
+                </secondItems>
+                <amount>
+                    <li>10</li>
+                    <li>10</li>
+                </amount>
+                <outputLimitControlled>true</outputLimitControlled>
+                <maxTotalOutput>300</maxTotalOutput>
+                <result>Shell_Toxic</result>	
+                <yield>35</yield>		
+                <useQualityIncreasing>false</useQualityIncreasing>
+                <singleTimeIfNotQualityIncreasing>0.2</singleTimeIfNotQualityIncreasing>
+            </ItemProcessor.CombinationDef>
+            </value>
+        </match>
+    </Operation>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Factions Expanded - Mechanoids</li>
+            <li>Rimefeller</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs</xpath>
+            <value>
+            <ItemProcessor.CombinationDef MayRequire="Ludeon.Rimworld.Biotech">
+                <defName>VFEM_MunitionsAndArmamentFactory_ArtilleryFoundry_Shell_Napalm</defName>
+                <building>VFEM_MunitionsAndArmamentFactory_ArtilleryFoundry</building>
+                <items>
+                    <li>Steel</li>
+                </items>	
+                <secondItems>
+                    <li>Napalm</li>
+                </secondItems>
+                <amount>
+                    <li>20</li>
+                    <li>20</li>
+                </amount>
+                <outputLimitControlled>true</outputLimitControlled>
+                <maxTotalOutput>300</maxTotalOutput>
+                <result>Shell_Napalm</result>	
+                <yield>35</yield>		
+                <useQualityIncreasing>false</useQualityIncreasing>
+                <singleTimeIfNotQualityIncreasing>0.2</singleTimeIfNotQualityIncreasing>
+            </ItemProcessor.CombinationDef>
+            </value>
+        </match>
+    </Operation>
+</Patch>

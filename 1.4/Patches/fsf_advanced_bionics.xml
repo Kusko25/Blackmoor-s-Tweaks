@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>[FSF] Advanced Bionics Expansion</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+        <xpath>Defs/HediffDef[defName="FSFArchotechStomach"]</xpath>
+        <value>
+            <stages>
+                <li>
+                    <hungerRateFactor>0.5</hungerRateFactor>
+                    <foodPoisoningChanceFactor>0</foodPoisoningChanceFactor>
+                </li>
+            </stages>
+        </value>
+    </match>
+  </Operation>
+
+</Patch>
