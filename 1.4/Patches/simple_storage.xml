@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>[JDS] Simple Storage</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="JDS_Med_Storage"]/building/fixedStorageSettings/filter/thingDefs</xpath> 
+            <value>
+                <li>Flake</li>
+                <li>Yayo</li>
+                <li>GoJuice</li>
+                <li>Penoxycyline</li>
+                <li>Luciferium</li>
+                <li MayRequire="vanillaracesexpanded.genie">VRE_Antibiotics</li>
+                <li MayRequire="Dubwise.Rimatomics">PotassiumIodide</li>
+                <li MayRequire="Ludeon.Rimworld.Biotech">Xenogerm</li>
+                <li MayRequire="Ludeon.Rimworld.Biotech">HumanOvum</li>
+                <li MayRequire="Ludeon.Rimworld.Biotech">HumanEmbryo</li>
+                <li MayRequire="Ludeon.Rimworld.Biotech">HemogenPack</li>
+            </value>
+        </match>
+    </Operation>
+</Patch>
