@@ -24,13 +24,23 @@
 				<thingDef>Synthread</thingDef>
 				<price>Normal</price>
 				<countRange>50~150</countRange>
-			</li>   
+			</li>
+			<li MayRequire="OskarPotocki.VFE.Insectoid" Class="StockGenerator_SingleDef">
+				<thingDef>VFEI_Spidersilk</thingDef>
+				<price>Expensive</price>
+				<countRange>50~150</countRange>
+			</li>
+			<li MayRequire="OskarPotocki.VFE.Classical" Class="StockGenerator_SingleDef">
+				<thingDef>VFEC_Tyrian</thingDef>
+				<price>Expensive</price>
+				<countRange>50~150</countRange>
+			</li>
 			<li Class="StockGenerator_Category">
 				<categoryDef>Textiles</categoryDef>
 				<thingDefCountRange>10~25</thingDefCountRange>
 				<price>Cheap</price>
 				<totalPriceRange>1400~2800</totalPriceRange>
-			</li>
+			</li>			
 			<li Class="StockGenerator_BuyExpensiveSimple" />
 			<li Class="StockGenerator_BuyTradeTag"><tag>Art</tag></li>
 			<li Class="StockGenerator_BuyTradeTag"><tag>MusicalInstrument</tag></li>
