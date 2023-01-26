@@ -2,12 +2,12 @@
 <Patch>
   <Operation Class="PatchOperationFindMod">
     <mods>
-      <li>Biotech Cloning</li>
+      <li>Vanilla Factions Expanded - Insectoids</li>
     </mods>
     <match Class="PatchOperationSequence">
       <operations>
         <li Class="PatchOperationRemove">
-          <xpath>Defs/PawnRelationDef[defName="CloneChild"]/incestOpinionOffset</xpath>
+          <xpath>Defs/TraderKindDef[defName="VFEI_Orbital_BioEngineeringSupplier"]</xpath>
         </li>
       </operations>
     </match>
