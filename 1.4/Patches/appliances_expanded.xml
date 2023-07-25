@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Appliances Expanded</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="CA_WoodFiredTurbine" or defName="CA_ChemfuelTurbine"]/researchPrerequisites</xpath>
+            <value>
+                <li MayRequire="VanillaExpanded.VFEPower">VFE_IndustrialGenerators</li>
+            </value>
+        </match>
+    </Operation>
+</Patch>

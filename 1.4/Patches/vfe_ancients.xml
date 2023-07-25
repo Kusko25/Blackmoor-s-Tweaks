@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Factions Expanded - Ancients</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+            <operations>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ThingDef[defName="VFEA_LargeLockedDoor"]/comps/li[@Class="CompProperties_Hackable"]/defence</xpath>
+                    <value>
+                        <defence>12500</defence>
+                    </value>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/VFEAncients.PowerDef[defName="Telepathy"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/VFEAncients.PowerDef[defName="PsychicShock"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/VFEAncients.PowerDef[defName="SelfControl"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/VFEAncients.PowerDef[defName="SummonLightning"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/VFEAncients.PowerDef[defName="GloryKill"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/VFEAncients.PowerDef[defName="Fireball"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/VFEAncients.PowerDef[defName="Metamorphosis"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/VFEAncients.PowerDef[defName="Darkvision"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/VFEAncients.PowerDef[defName="EfficientBuilder"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/VFEAncients.PowerDef[defName="Loner"]</xpath>
+                </li>
+            </operations>
+        </match>
+    </Operation>
+</Patch>

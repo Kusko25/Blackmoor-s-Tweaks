@@ -12,6 +12,7 @@
                 <li>GoJuice</li>
                 <li>Penoxycyline</li>
                 <li>Luciferium</li>
+                <li>WakeUp</li>
                 <li MayRequire="vanillaracesexpanded.genie">VRE_Antibiotics</li>
                 <li MayRequire="Dubwise.Rimatomics">PotassiumIodide</li>
                 <li MayRequire="Ludeon.Rimworld.Biotech">Xenogerm</li>

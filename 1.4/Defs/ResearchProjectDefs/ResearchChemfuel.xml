@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ResearchProjectDef>
+        <defName>BMT_Chemfuel</defName>
+        <label>chemfuel</label>
+        <description>The basic principles of fermentation could also be used to create ignitable oils from compostable matter.</description>
+        <baseCost>800</baseCost>
+        <techLevel>Neolithic</techLevel>
+        <researchViewX>00.00</researchViewX>        <!--Increased by 1.00 each time-->
+        <researchViewY>00.00</researchViewY>        <!--Increased by 0.70 each time-->
+        <tab>BlackmoorTweaks</tab>
+        <prerequisites>
+            <li>Brewing</li>
+        </prerequisites>
+    </ResearchProjectDef>
+</Defs>

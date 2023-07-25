@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>	
+    <BlackmoorTweaks.WasteProcessor.InsertFirstItemDesc>Compost to insert</BlackmoorTweaks.WasteProcessor.InsertFirstItemDesc>
+    <BlackmoorTweaks.WasteProcessor.bringIngredientsText>Bring compost</BlackmoorTweaks.WasteProcessor.bringIngredientsText>
+    <BlackmoorTweaks.WasteProcessor.bringIngredientsDesc>Bring compost to the waste processor to start processing.</BlackmoorTweaks.WasteProcessor.bringIngredientsDesc>
+    <BlackmoorTweaks.WasteProcessor.cancelIngredientsText>Cancel bringing compost</BlackmoorTweaks.WasteProcessor.cancelIngredientsText>
+    <BlackmoorTweaks.WasteProcessor.cancelIngredientsDesc>Cancel bringing compost to the waste processor.</BlackmoorTweaks.WasteProcessor.cancelIngredientsDesc>
+</LanguageData>

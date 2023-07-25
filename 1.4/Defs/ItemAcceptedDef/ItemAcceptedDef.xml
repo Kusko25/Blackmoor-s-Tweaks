@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<ItemProcessor.ItemAcceptedDef MayRequire="Dubwise.DubsBadHygiene">
+		<defName>BMT_WasteProcessor</defName>
+		<building>BMT_WasteProcessor</building>
+		<slot>1</slot>
+		<items>
+			<li>FecalSludge</li>
+		</items>
+	</ItemProcessor.ItemAcceptedDef>
+</Defs>

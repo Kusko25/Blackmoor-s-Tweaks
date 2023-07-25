@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="BiofuelRefining"]/prerequisites</xpath>
+        <value>
+            <li>BMT_Chemfuel</li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Chemfuel Expanded</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+            <operations>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="VCHE_ChemfuelPipe" or defName="VCHE_UndergroundChemfuelPipe" or defName="VCHE_ChemfuelValve" or defName="VCHE_ChemfuelDrain"]/researchPrerequisites</xpath>
+                    <value>
+                        <li>BMT_Chemfuel</li>
+                    </value>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/ThingDef[defName="VCHE_ChemfuelPipe" or defName="VCHE_UndergroundChemfuelPipe" or defName="VCHE_ChemfuelValve" or defName="VCHE_ChemfuelDrain"]/researchPrerequisites/li[text()="BiofuelRefining"]</xpath>
+                </li>
+            </operations>
+        </match>
+    </Operation>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Appliances Expanded</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+            <operations>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="CA_ChemfuelCrematorium" or defName="CA_ChemfuelSmithy" or defName="CA_ChemfuelSmelter" or defName="CE_ChemfuelStove" or defName="CA_ChemfuelStandingLamp"]/researchPrerequisites</xpath>
+                    <value>
+                        <li>BMT_Chemfuel</li>
+                    </value>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/ThingDef[defName="CA_ChemfuelCrematorium" or defName="CA_ChemfuelSmelter" or defName="CA_ChemfuelStandingLamp"]/researchPrerequisites/li[text()="Electricity"]</xpath>
+                </li>
+            </operations>
+        </match>
+    </Operation>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Cooking Expanded</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+            <operations>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="VCE_ElectricPot"]/researchPrerequisites</xpath>
+                    <value>
+                        <li>Electricity</li>
+                    </value>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/ResearchProjectDef[defName="VCE_SoupCooking"]/prerequisites</xpath>
+                </li>
+            </operations>
+        </match>
+    </Operation>
+</Patch>

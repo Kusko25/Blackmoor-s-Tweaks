@@ -4,17 +4,32 @@
     <mods>
       <li>[FSF] Advanced Bionics Expansion</li>
     </mods>
-    <match Class="PatchOperationAdd">
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
         <xpath>Defs/HediffDef[defName="FSFArchotechStomach"]</xpath>
         <value>
-            <stages>
-                <li>
-                    <hungerRateFactor>0.5</hungerRateFactor>
-                    <foodPoisoningChanceFactor>0</foodPoisoningChanceFactor>
-                </li>
-            </stages>
+          <stages>
+            <li>
+              <hungerRateFactor>0.5</hungerRateFactor>
+              <foodPoisoningChanceFactor>0</foodPoisoningChanceFactor>
+            </li>
+          </stages>
         </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/HediffDef[@ParentName="FSFAddedBodyPartArchotech" and defName="FSFArchotechJaw"]</xpath>
+        <value>
+          <stages>
+            <li>
+              <statOffsets>
+                <PawnBeauty>1</PawnBeauty>
+              </statOffsets>
+            </li>
+          </stages>
+        </value>
+      </li>
+      </operations>
     </match>
   </Operation>
-
 </Patch>

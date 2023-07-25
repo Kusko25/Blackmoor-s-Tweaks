@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	
+	<ItemProcessor.CombinationDef MayRequire="Dubwise.DubsBadHygiene">
+		<defName>BMT_ProcessWaste</defName>
+		<building>BMT_WasteProcessor</building>
+		<items>
+			<li>FecalSludge</li>
+		</items>
+		<amount>
+			<li>300</li>
+		</amount>
+		<result>Chemfuel</result>
+		<yield>120</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>5</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+
+</Defs>

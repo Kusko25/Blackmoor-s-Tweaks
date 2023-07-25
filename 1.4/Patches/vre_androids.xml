@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Races Expanded - Android</li>
+        </mods>
+        <match Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="VREA_NeutroTank"]/comps/li/storageCapacity</xpath>
+            <value>
+                <storageCapacity>1000</storageCapacity>
+            </value>
+        </match>
+    </Operation>
+</Patch>

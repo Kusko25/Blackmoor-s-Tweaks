@@ -6,8 +6,11 @@
     </mods>
     <match Class="PatchOperationSequence">
       <operations>
-        <li Class="PatchOperationRemove">
-          <xpath>Defs/TraderKindDef[defName="VFEI_Orbital_BioEngineeringSupplier"]</xpath>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="VFEI_VatGrownSpiderweaver" or defName="VFEI_VatGrownMilkbeetle" or defName="VFEI_VatGrownPrincess" or defName="VFEI_VatgrownRoyalLarva" or defName="VFEI_VatGrownRoyalMaggot"]/race</xpath>
+          <value>
+            <roamMtbDays>6</roamMtbDays>
+          </value>
         </li>
       </operations>
     </match>
