@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ResearchProjectDef>
+        <defName>BMT_Horizon_Bows</defName>
+        <label>Machine Hunter Bows</label>
+        <description>Craft hunter and sharpshot bows from wood and plasteel, strong enough to take down even the greatest metal beasts.</description>
+        <baseCost>1000</baseCost>
+        <techLevel>Neolithic</techLevel>
+        <prerequisites>
+            <li>Greatbow</li>
+            <li>Smithing</li>
+        </prerequisites>
+        <researchViewX>2.00</researchViewX>
+        <researchViewY>0.70</researchViewY>
+    </ResearchProjectDef>
+</Defs>

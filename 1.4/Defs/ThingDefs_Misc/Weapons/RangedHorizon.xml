@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <!-- Hunter Bow -->
+    <ThingDef ParentName="BaseWeaponNeolithic">
+        <defName>BMT_Horizon_Bow_Hunter</defName>        <!-- unique -->
+        <label>hunter bow</label>
+        <description>Expertly shaped wood reinforced by machine metal. Combined with plasteel tipped arrows this quick firing weapon is a fearsome weapon in close range.</description>
+        <graphicData>
+            <texPath>Things/WeaponRanged/HunterBow</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>1.0</drawSize>
+        </graphicData>
+        <soundInteract>Bow_Small</soundInteract>
+        <costList>
+            <WoodLog>55</WoodLog>
+            <Plasteel>15</Plasteel>
+        </costList>
+        <statBases>
+            <WorkToMake>14200</WorkToMake>
+            <Mass>3.4</Mass>
+            <AccuracyTouch>0.7</AccuracyTouch>
+            <AccuracyShort>0.95</AccuracyShort>
+            <AccuracyMedium>0.8</AccuracyMedium>
+            <AccuracyLong>0.60</AccuracyLong>
+            <RangedWeapon_Cooldown>0.5</RangedWeapon_Cooldown>
+        </statBases>
+        <equippedAngleOffset>-65</equippedAngleOffset>
+        <weaponTags>
+            <li>NeolithicRangedBasic</li>            <!-- recommended -->
+            <li>NeolithicRangedHeavy</li>
+        </weaponTags>
+        <recipeMaker>
+            <researchPrerequisite>BMT_Horizon_Bows</researchPrerequisite>
+            <recipeUsers>
+                <li>FueledSmithy</li>
+                <li>ElectricSmithy</li>
+            </recipeUsers>
+            <skillRequirements>
+                <Crafting>10</Crafting>
+            </skillRequirements>
+        </recipeMaker>
+        <verbs>
+            <li>
+                <verbClass>Verb_Shoot</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <defaultProjectile>BMT_Arrow_Hunter</defaultProjectile>
+                <warmupTime>1.35</warmupTime>
+                <range>26</range>
+                <soundCast>Bow_Small</soundCast>
+            </li>
+        </verbs>
+        <tools>
+            <li>
+                <label>limb</label>
+                <capacities>
+                    <li>Blunt</li>
+                    <li>Poke</li>
+                </capacities>
+                <power>9</power>
+                <cooldownTime>2</cooldownTime>
+            </li>
+        </tools>
+    </ThingDef>
+    <ThingDef ParentName="BaseProjectileNeolithic">
+        <defName>BMT_Arrow_Hunter</defName>
+        <label>hunter arrow</label>
+        <graphicData>
+            <texPath>Things/Projectile/Arrow_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Arrow</damageDef>
+            <damageAmountBase>15</damageAmountBase>
+            <stoppingPower>1</stoppingPower>
+            <armorPenetrationBase>0.35</armorPenetrationBase>
+            <arcHeightFactor>0.40</arcHeightFactor>
+            <shadowSize>0.4</shadowSize>
+            <speed>50</speed>
+        </projectile>
+    </ThingDef>
+    <!-- Sharpshot Bow -->
+    <ThingDef ParentName="BaseWeaponNeolithic">
+        <defName>BMT_Horizon_Bow_Delta</defName>        <!-- unique -->
+        <label>sharpshot bow</label>
+        <description>Expertly shaped wood around a core of machine metal. Combined with plasteel tipped arrows this massive slow firing weapon strikes with extreme wrath at long ranges.</description>
+        <graphicData>
+            <texPath>Things/WeaponRanged/DeltaSniperBow</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>1.5</drawSize>
+        </graphicData>
+        <soundInteract>Bow_Large</soundInteract>
+        <costList>
+            <WoodLog>100</WoodLog>
+            <Plasteel>40</Plasteel>
+        </costList>
+        <statBases>
+            <WorkToMake>14200</WorkToMake>
+            <Mass>6.4</Mass>
+            <AccuracyTouch>0.3</AccuracyTouch>
+            <AccuracyShort>0.7</AccuracyShort>
+            <AccuracyMedium>0.85</AccuracyMedium>
+            <AccuracyLong>0.95</AccuracyLong>
+            <RangedWeapon_Cooldown>0.5</RangedWeapon_Cooldown>
+        </statBases>
+        <equippedAngleOffset>-65</equippedAngleOffset>
+        <weaponTags>
+            <li>NeolithicRangedBasic</li>            <!-- recommended -->
+            <li>NeolithicRangedHeavy</li>
+        </weaponTags>
+        <recipeMaker>
+            <researchPrerequisite>BMT_Horizon_Bows</researchPrerequisite>
+            <recipeUsers>
+                <li>FueledSmithy</li>
+                <li>ElectricSmithy</li>
+            </recipeUsers>
+            <skillRequirements>
+                <Crafting>14</Crafting>
+            </skillRequirements>
+        </recipeMaker>
+        <verbs>
+            <li>
+                <verbClass>Verb_Shoot</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <defaultProjectile>BMT_Arrow_Delta</defaultProjectile>
+                <warmupTime>2.0</warmupTime>
+                <range>40</range>
+                <soundCast>Bow_Large</soundCast>
+            </li>
+        </verbs>
+        <tools>
+            <li>
+                <label>limb</label>
+                <capacities>
+                    <li>Blunt</li>
+                    <li>Poke</li>
+                </capacities>
+                <power>12</power>
+                <cooldownTime>2</cooldownTime>
+            </li>
+        </tools>
+    </ThingDef>
+    <ThingDef ParentName="BaseProjectileNeolithic">
+        <defName>BMT_Arrow_Delta</defName>
+        <label>sharpshot arrow</label>
+        <graphicData>
+            <texPath>Things/Projectile/Arrow_Large</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Arrow</damageDef>
+            <damageAmountBase>28</damageAmountBase>
+            <stoppingPower>1.5</stoppingPower>
+            <armorPenetrationBase>0.45</armorPenetrationBase>
+            <arcHeightFactor>0.50</arcHeightFactor>
+            <shadowSize>0.4</shadowSize>
+            <speed>55</speed>
+        </projectile>
+    </ThingDef>
+</Defs>
