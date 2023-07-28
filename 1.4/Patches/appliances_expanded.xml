@@ -11,4 +11,20 @@
             </value>
         </match>
     </Operation>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Appliances Expanded</li>
+        </mods>
+        <match Class="PatchOperationFindMod">
+            <mods>
+                <li>Vanilla Ideology Expanded - Memes and Structures</li>
+            </mods>
+            <match Class="PatchOperationAdd">
+                <xpath>Defs/VanillaMemesExpanded.FireSourcesForPreceptDefs[defName="VME_SupportedFireSourcesForPreceptDef"]/supportedFireSourcesForPrecept</xpath>
+                <value>
+                    <li>CA_ChemfuelBrazier</li>
+                </value>
+            </match>
+        </match>
+    </Operation>
 </Patch>
