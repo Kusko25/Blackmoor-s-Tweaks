@@ -42,6 +42,53 @@
                 <li Class="PatchOperationRemove">
                     <xpath>Defs/VFEAncients.PowerDef[defName="Loner"]</xpath>
                 </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/ThingDef[defName="VFEA_VaultWall"]/building/deconstructible</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/ThingDef[defName="VFEA_VaultWall"]/leaveResourcesWhenKilled</xpath>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ThingDef[defName="VFEA_SuperNaniteInjectorPump"]/comps/li[@Class="CompProperties_Facility"]/statOffsets/VFEA_InjectingTimeFactor</xpath>
+                    <value>
+                        <VFEA_InjectingTimeFactor>-0.09</VFEA_InjectingTimeFactor>
+                    </value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ThingDef[defName="VFEA_SuperNaniteDialyzer"]/comps/li[@Class="CompProperties_Facility"]/statOffsets/VFEA_FailChance</xpath>
+                    <value>
+                        <VFEA_FailChance>-0.1</VFEA_FailChance>
+                    </value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ThingDef[defName="VFEA_SuperNaniteCentrifuge"]/comps/li[@Class="CompProperties_Facility"]/statOffsets/VFEA_FailChance</xpath>
+                    <value>
+                        <VFEA_FailChance>-0.1</VFEA_FailChance>
+                    </value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ThingDef[defName="VFEA_SimulationDrive"]/comps/li[@Class="CompProperties_Facility"]/statOffsets/VFEA_FailChance</xpath>
+                    <value>
+                        <VFEA_FailChance>-0.02</VFEA_FailChance>
+                    </value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ThingDef[defName="VFEA_GenomeStabilizer"]/comps/li[@Class="CompProperties_Facility"]/statOffsets/VFEA_FailChance</xpath>
+                    <value>
+                        <VFEA_FailChance>-0.2</VFEA_FailChance>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[@Name="VFEA_WallLampBaseA"]/comps/li[@Class="CompProperties_Power"]</xpath>
+                    <value>
+                        <powerUpgrades>
+                            <li>
+                                <researchProject>ColoredLights</researchProject>
+                                <factor>0.5</factor>
+                            </li>
+                        </powerUpgrades>
+                    </value>
+                </li>
             </operations>
         </match>
     </Operation>

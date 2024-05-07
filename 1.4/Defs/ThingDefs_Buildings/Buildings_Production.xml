@@ -135,7 +135,6 @@
       <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
       <designationCategory>VCHE_PipeNetworks</designationCategory>
       <staticSunShadowHeight>0.2</staticSunShadowHeight>
-      <constructEffect>ConstructWood</constructEffect>
       <canOverlapZones>false</canOverlapZones>
       <researchPrerequisites>
          <li>BMT_Chemfuel</li>

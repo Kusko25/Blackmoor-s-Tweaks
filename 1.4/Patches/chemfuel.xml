@@ -31,13 +31,13 @@
         <match Class="PatchOperationSequence">
             <operations>
                 <li Class="PatchOperationAdd">
-                    <xpath>Defs/ThingDef[defName="CA_ChemfuelCrematorium" or defName="CA_ChemfuelSmithy" or defName="CA_ChemfuelSmelter" or defName="CE_ChemfuelStove" or defName="CA_ChemfuelStandingLamp"]/researchPrerequisites</xpath>
+                    <xpath>Defs/ThingDef[defName="CA_ChemfuelCrematorium" or defName="CA_ChemfuelSmithy" or defName="CA_ChemfuelSmelter" or defName="CE_ChemfuelStove"]/researchPrerequisites</xpath>
                     <value>
                         <li>BMT_Chemfuel</li>
                     </value>
                 </li>
                 <li Class="PatchOperationRemove">
-                    <xpath>Defs/ThingDef[defName="CA_ChemfuelCrematorium" or defName="CA_ChemfuelSmelter" or defName="CA_ChemfuelStandingLamp"]/researchPrerequisites/li[text()="Electricity"]</xpath>
+                    <xpath>Defs/ThingDef[defName="CA_ChemfuelCrematorium" or defName="CA_ChemfuelSmelter"]/researchPrerequisites/li[text()="Electricity"]</xpath>
                 </li>
             </operations>
         </match>

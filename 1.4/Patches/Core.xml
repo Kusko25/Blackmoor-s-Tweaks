@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationAdd">
+        <!-- Match all recipes that start with Make_Chemfuel and don't have a workSkill node-->
+        <xpath>Defs/RecipeDef[starts-with(defName, "Make_Chemfuel") and not(workSkill)]</xpath>
+        <!-- Add workSkill Crafting -->
+        <value>
+            <workSkill>Crafting</workSkill>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <!-- Match all recipes that start with Smelt -->
+        <xpath>Defs/RecipeDef[starts-with(defName, "Smelt") and not(workSkill)]</xpath>
+        <!-- Add workSkill Crafting -->
+        <value>
+            <workSkill>Crafting</workSkill>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/RecipeDef[defName="ExtractMetalFromSlag"]</xpath>
+        <!-- Add workSkill Crafting -->
+        <value>
+            <workSkill>Crafting</workSkill>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/TraderKindDef[defName="Orbital_Exotic"]/stockGenerators/li[tradeTag="TechHediff"]/thingDefCountRange</xpath>
+        <value>
+            <thingDefCountRange>6~12</thingDefCountRange>
+        </value>
+    </Operation>
+    <!-- Add AC_EmptyArchoStack to Exotic Goods Trader with low probability -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TraderKindDef[defName="Orbital_Exotic"]/stockGenerators</xpath>
+        <value>
+            <li MayRequire="hlx.UltratechAlteredCarbon" Class="StockGenerator_SingleDef">
+                <thingDef>AC_EmptyArchoStack</thingDef>
+                <countRange>0~1</countRange>
+                <price>Expensive</price>
+            </li>
+        </value>
+    </Operation>
+</Patch>

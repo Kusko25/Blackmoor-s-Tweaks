@@ -63,14 +63,18 @@
                     <secondItems>
                         <li>Synthread</li>
                     </secondItems>
+                    <thirdItems>
+                        <li>DevilstrandCloth</li>
+                    </thirdItems>
                     <amount>
-                        <li>150</li>
+                        <li>50</li>
+                        <li>10</li>
                         <li>10</li>
                     </amount>
                     <outputLimitControlled>true</outputLimitControlled>
                     <maxTotalOutput>300</maxTotalOutput>
                     <result>Hyperweave</result>
-                    <yield>3</yield>
+                    <yield>8</yield>
                     <useQualityIncreasing>false</useQualityIncreasing>
                     <singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
                 </ItemProcessor.CombinationDef>

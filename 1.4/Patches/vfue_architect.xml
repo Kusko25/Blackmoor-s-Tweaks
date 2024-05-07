@@ -4,14 +4,18 @@
         <mods>
             <li>Vanilla Furniture Expanded - Architect</li>
         </mods>
-        <match Class="PatchOperationAdd">
-            <xpath>Defs/ThingDef[defName="VFEArch_ArmoredWall"]/damageMultipliers</xpath>
-            <value>
-                <li>
-                    <damageDef>Vaporize</damageDef>
-                    <multiplier>0.05</multiplier>
+        <match Class="PatchOperationSequence">
+            <operations>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="VFEArch_ArmoredWall"]/damageMultipliers</xpath>
+                    <value>
+                        <li>
+                            <damageDef>Vaporize</damageDef>
+                            <multiplier>0.05</multiplier>
+                        </li>
+                    </value>
                 </li>
-            </value>
+            </operations>
         </match>
     </Operation>
 </Patch>

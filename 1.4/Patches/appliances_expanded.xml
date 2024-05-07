@@ -4,11 +4,21 @@
         <mods>
             <li>Appliances Expanded</li>
         </mods>
-        <match Class="PatchOperationAdd">
-            <xpath>Defs/ThingDef[defName="CA_WoodFiredTurbine" or defName="CA_ChemfuelTurbine"]/researchPrerequisites</xpath>
-            <value>
-                <li MayRequire="VanillaExpanded.VFEPower">VFE_IndustrialGenerators</li>
-            </value>
+        <match Class="PatchOperationSequence">
+            <operations>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="CA_WoodFiredTurbine" or defName="CA_ChemfuelTurbine"]/researchPrerequisites</xpath>
+                    <value>
+                        <li MayRequire="VanillaExpanded.VFEPower">VFE_IndustrialGenerators</li>
+                    </value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/WorkGiverDef[defName="SCP_ChemDrill"]/canBeDoneByMechs</xpath>
+                    <value>
+                        <canBeDoneByMechs>true</canBeDoneByMechs>
+                    </value>
+                </li>
+            </operations>
         </match>
     </Operation>
     <Operation Class="PatchOperationFindMod">

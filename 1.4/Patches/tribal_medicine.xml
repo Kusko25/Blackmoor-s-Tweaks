@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Tribal Medicine 2.0</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="TM_MedicineTribal"]/recipeMaker/recipeUsers</xpath>
+            <value>
+                <li>DrugLab</li>                
+            </value>
+        </match>
+    </Operation>
+</Patch>
