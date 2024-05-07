@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="XmlExtensions.FindMod">
+        <mods>
+            <li>Ludeon.Rimworld.Biotech</li>
+        </mods>
+        <packageId>true</packageId>
+        <caseTrue>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>biotech_boostMechlord</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationRemove">
+                        <xpath>Defs/ThingDef[defName="Apparel_MechlordSuit"]/equippedStatOffsets/*[self::ShootingAccuracyPawn or self::MeleeHitChance or self::MoveSpeed]</xpath>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationRemove">
+                        <xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetMechlordHelmet"]/equippedStatOffsets/*[self::ShootingAccuracyPawn or self::MeleeHitChance]</xpath>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+        </caseTrue>
+        <caseFalse>
+            <Operation Class="XmlExtensions.PatchOperationRemove">
+                <xpath>Defs/XmlExtensions.SettingsMenuDef[modId="Blackmoor.BlackmoorsTweaks"]/settings/li[tag="biotech"]</xpath>
+            </Operation>
+        </caseFalse>
+    </Operation>
+</Patch>

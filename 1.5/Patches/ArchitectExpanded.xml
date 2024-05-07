@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="XmlExtensions.FindMod">
+    <mods>
+        <li>VanillaExpanded.VFEArchitect</li>
+    </mods>
+    <packageId>true</packageId>
+    <caseTrue>
+        <Operation Class="XmlExtensions.OptionalPatch">
+            <modId>Blackmoor.BlackmoorsTweaks</modId>
+            <key>bt_vea_useCobblestoneTextureForTile</key>
+            <!--By default, apply the patch-->
+            <defaultValue>true</defaultValue>
+            <caseTrue>
+                <Operation Class="XmlExtensions.PatchOperationReplace">
+                    <xpath>Defs/TerrainDef[@Name="TileStoneBase"]/texturePath</xpath>
+                    <value>
+                        <texturePath>Terrain/Cobblestone</texturePath>
+                    </value>
+                </Operation>
+            </caseTrue>
+        </Operation>
+    </caseTrue>
+    <caseFalse>
+        <Operation Class="XmlExtensions.PatchOperationRemove">
+            <xpath>Defs/XmlExtensions.SettingsMenuDef[modId="Blackmoor.BlackmoorsTweaks"]/settings/li[tag="ve_architect"]</xpath>
+        </Operation>
+    </caseFalse>
+</Operation>
+</Patch>

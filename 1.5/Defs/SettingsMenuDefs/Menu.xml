@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <XmlExtensions.SettingsMenuDef>
+        <defName>BlackmoorTweaks</defName>
+        <modId>Blackmoor.BlackmoorsTweaks</modId>
+        <label>Blackmoor's Tweaks</label>
+        <settings>
+            <li Class="XmlExtensions.Setting.Section">
+                <tag>biotech</tag>
+                <settings>
+                    <li Class="XmlExtensions.Setting.Text">
+                        <text>Biotech</text>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>biotech_boostMechlord</key>
+                        <label>Remove movement and combat penalties</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                </settings>
+            </li>
+            <li Class="XmlExtensions.Setting.Section">
+                <tag>ve_architect</tag>
+                <settings>
+                    <li Class="XmlExtensions.Setting.Text">
+                        <text>Vanilla Expanded - Architect</text>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_vea_useCobblestoneTextureForTile</key>
+                        <label>Replace Vanilla Tile Texture with Architect's Cobblestone</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                </settings>
+            </li>
+        </settings>
+    </XmlExtensions.SettingsMenuDef>
+</Defs>
