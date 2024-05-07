@@ -13,7 +13,13 @@
                 <defaultValue>true</defaultValue>
                 <caseTrue>
                     <Operation Class="XmlExtensions.PatchOperationRemove">
-                        <xpath>Defs/ThingDef[defName="Apparel_MechlordSuit"]/equippedStatOffsets/*[self::ShootingAccuracyPawn or self::MeleeHitChance or self::MoveSpeed]</xpath>
+                        <xpath>Defs/ThingDef[defName="Apparel_MechlordSuit"]/equippedStatOffsets/*[self::ShootingAccuracyPawn or self::MeleeHitChance]</xpath>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationAdd">
+                        <xpath>Defs/ThingDef[defName="Apparel_MechlordSuit"]/equippedStatOffsets</xpath>
+                        <value>
+                            <MoveSpeed>0</MoveSpeed>
+                        </value>
                     </Operation>
                     <Operation Class="XmlExtensions.PatchOperationRemove">
                         <xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetMechlordHelmet"]/equippedStatOffsets/*[self::ShootingAccuracyPawn or self::MeleeHitChance]</xpath>

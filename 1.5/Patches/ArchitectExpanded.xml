@@ -15,7 +15,7 @@
                 <Operation Class="XmlExtensions.PatchOperationReplace">
                     <xpath>Defs/TerrainDef[@Name="TileStoneBase"]/texturePath</xpath>
                     <value>
-                        <texturePath>Terrain/Cobblestone</texturePath>
+                        <texturePath>Terrains/Cobblestone</texturePath>
                     </value>
                 </Operation>
             </caseTrue>
