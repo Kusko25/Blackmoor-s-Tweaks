@@ -86,6 +86,27 @@
                     </Operation>
                 </caseTrue>
             </Operation>
+            <!-- ## Phoenix Boost -->
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>royalty_boostPhoenix</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]/comps/li[@Class="CompProperties_ApparelReloadable"]/maxCharges</xpath>
+                        <value>
+                            <maxCharges>3</maxCharges>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]/comps/li[@Class="CompProperties_ApparelReloadable"]/ammoCountPerCharge</xpath>
+                        <value>
+                            <ammoCountPerCharge>15</ammoCountPerCharge>
+                        </value>
+                    </Operation>
+                </caseTrue>
+            </Operation>
             <!-- ## Area Target Launchers -->
             <Operation Class="XmlExtensions.OptionalPatch">
                 <modId>Blackmoor.BlackmoorsTweaks</modId>
@@ -121,7 +142,7 @@
                 <defaultValue>true</defaultValue>
                 <caseTrue>
                     <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
-                        <xpath>Defs/AbilityDef/verbProperties[not(requireLineOfSight) or requireLineOfSight!="False"]</xpath>
+                        <xpath>Defs/AbilityDef[@ParentName="PsycastBaseSkip" or @ParentName="PsycastBase" and @Abstract!="True"]/verbProperties[not(requireLineOfSight) or requireLineOfSight!="False"]</xpath>
                         <value>
                             <drawHighlightWithLineOfSight>true</drawHighlightWithLineOfSight>
                         </value>
