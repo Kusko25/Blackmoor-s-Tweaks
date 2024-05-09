@@ -6,6 +6,59 @@
         <label>Blackmoor's Tweaks</label>
         <settings>
             <li Class="XmlExtensions.Setting.Section">
+                <tag>core</tag>
+                <settings>
+                    <li Class="XmlExtensions.Setting.Text">
+                        <text>Core</text>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>core_areaTargetLaunchers</key>
+                        <label>Changes AOE abilities like grenades and launchers to target ground instead of people.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>core_powerArmorMovement</key>
+                        <label>Changes power armor movement penalty.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Numeric">
+                        <key>core_powerArmorMovement_Value</key>
+                        <label>Speed Penalty/Bonus</label>
+                        <defaultValue>-0.2</defaultValue>
+                        <min>-1.0</min>
+                        <max>10.0</max>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>core_LOSPreviewGuns</key>
+                        <label>Enables LOS for all guns.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                </settings>
+            </li>
+            <li Class="XmlExtensions.Setting.Section">
+                <tag>royalty</tag>
+                <settings>
+                    <li Class="XmlExtensions.Setting.Text">
+                        <text>Royalty</text>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>royalty_boostGrenadier</key>
+                        <label>Increases grenade charges to 5 for same resource and reduces the miss radius.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>royalty_areaTargetLaunchers</key>
+                        <label>Changes AOE abilities like Grenadier grenade and Berser Pulse psycast to target ground instead of people.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>royalty_LOSPreview</key>
+                        <label>Changes psycasts that require LOS to render a preview when casting.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                </settings>
+            </li>
+            <li Class="XmlExtensions.Setting.Section">
                 <tag>biotech</tag>
                 <settings>
                     <li Class="XmlExtensions.Setting.Text">

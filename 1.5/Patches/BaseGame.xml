@@ -1,11 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
+    <!-- # Core -->
+    <!-- ## Area Target Launchers -->
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>Blackmoor.BlackmoorsTweaks</modId>
+        <key>core_areaTargetLaunchers</key>
+        <!--By default, apply the patch-->
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.PatchOperationSafeAdd">
+                <xpath>Defs/ThingDef[defName="Weapon_GrenadeFrag" or defName="Weapon_GrenadeMolotov" or defName="Weapon_GrenadeEMP" or defName="Gun_IncendiaryLauncher" or defName="Gun_EmpLauncher"]/verbs/li[verbClass="Verb_LaunchProjectile"]/targetParams</xpath>
+                <value>
+                    <canTargetPawns>false</canTargetPawns>
+                </value>
+            </Operation>
+        </caseTrue>
+    </Operation>
+    <!-- ## Power Armor Movement -->
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>Blackmoor.BlackmoorsTweaks</modId>
+        <key>core_powerArmorMovement</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.UseSetting">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>core_powerArmorMovement_Value</key>
+                <defaultValue>-0.2</defaultValue>
+                <apply>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ThingDef[@Name="ApparelArmorPowerBase"]/equippedStatOffsets/MoveSpeed</xpath>
+                        <value>
+                            <MoveSpeed>{core_powerArmorMovement_Value}</MoveSpeed>
+                        </value>
+                    </Operation>
+                </apply>
+            </Operation>
+        </caseTrue>
+    </Operation>
+    <!-- ## LOS Preview Guns -->
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>Blackmoor.BlackmoorsTweaks</modId>
+        <key>core_LOSPreviewGuns</key>
+        <!--By default, apply the patch-->
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+                <xpath>Defs/ThingDef/verbs/li[verbClass="Verb_Shoot"]</xpath>
+                <value>
+                    <drawHighlightWithLineOfSight>true</drawHighlightWithLineOfSight>
+                </value>
+            </Operation>
+        </caseTrue>
+    </Operation>
+    <!-- # Royalty -->
+    <Operation Class="XmlExtensions.FindMod">
+        <mods>
+            <li>Ludeon.Rimworld.Royalty</li>
+        </mods>
+        <packageId>true</packageId>
+        <caseTrue>
+            <!-- ## Grenadier Boost -->
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>royalty_boostGrenadier</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/comps/li[@Class="CompProperties_ApparelReloadable"]/maxCharges</xpath>
+                        <value>
+                            <maxCharges>5</maxCharges>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/comps/li[@Class="CompProperties_ApparelReloadable"]/ammoCountPerCharge</xpath>
+                        <value>
+                            <ammoCountPerCharge>10</ammoCountPerCharge>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/verbs/li[label="launch frag grenade"]/forcedMissRadius</xpath>
+                        <value>
+                            <forcedMissRadius>0.9</forcedMissRadius>
+                        </value>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+            <!-- ## Area Target Launchers -->
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>royalty_areaTargetLaunchers</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationSafeAdd">
+                        <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier" or defName="Apparel_ArmorCataphractPhoenix"]/verbs/li[verbClass="Verb_LaunchProjectileStatic"]/targetParams</xpath>
+                        <value>
+                            <canTargetPawns>false</canTargetPawns>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationSafeAdd">
+                        <xpath>Defs/AbilityDef[defName="BlindingPulse" or defName="VertigoPulse" or defName="BerserkPulse" or defName="MassChaosSkip"]/verbProperties/targetParams</xpath>
+                        <value>
+                            <canTargetPawns>False</canTargetPawns>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+                        <xpath>Defs/AbilityDef[defName="BlindingPulse" or defName="VertigoPulse" or defName="BerserkPulse" or defName="MassChaosSkip"]/verbProperties/targetParams</xpath>
+                        <value>
+                            <canTargetAnimals>False</canTargetAnimals>
+                        </value>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+            <!-- ## LOS Preview -->
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>royalty_LOSPreview</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+                        <xpath>Defs/AbilityDef/verbProperties[not(requireLineOfSight) or requireLineOfSight!="False"]</xpath>
+                        <value>
+                            <drawHighlightWithLineOfSight>true</drawHighlightWithLineOfSight>
+                        </value>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+        </caseTrue>
+        <caseFalse>
+            <Operation Class="XmlExtensions.PatchOperationRemove">
+                <xpath>Defs/XmlExtensions.SettingsMenuDef[modId="Blackmoor.BlackmoorsTweaks"]/settings/li[tag="royalty"]</xpath>
+            </Operation>
+        </caseFalse>
+    </Operation>
+    <!-- # Biotech -->
     <Operation Class="XmlExtensions.FindMod">
         <mods>
             <li>Ludeon.Rimworld.Biotech</li>
         </mods>
         <packageId>true</packageId>
         <caseTrue>
+            <!-- ## Mechlord Boost -->
             <Operation Class="XmlExtensions.OptionalPatch">
                 <modId>Blackmoor.BlackmoorsTweaks</modId>
                 <key>biotech_boostMechlord</key>
