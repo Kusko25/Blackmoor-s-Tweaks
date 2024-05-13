@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="XmlExtensions.FindMod">
+        <mods>
+            <li>VanillaExpanded.VFEFarming</li>
+        </mods>
+        <packageId>true</packageId>
+        <caseTrue>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>bt_vfe_allowEverythingInPlanter</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ThingDef[defName="VFE_PlanterBox"]/building/sowTag</xpath>
+                        <value>
+                            <sowTag>Ground</sowTag>
+                        </value>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>bt_vfe_reduceFertilityPlanter</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.UseSetting">
+                        <modId>Blackmoor.BlackmoorsTweaks</modId>
+                        <key>bt_vfe_reduceFertilityPlanter_Value</key>
+                        <defaultValue>0.7</defaultValue>
+                        <apply>
+                            <Operation Class="XmlExtensions.PatchOperationReplace">
+                                <xpath>Defs/ThingDef[defName="VFE_PlanterBox"]/fertility</xpath>
+                                <value>
+                                    <fertility>{bt_vfe_reduceFertilityPlanter_Value}</fertility>
+                                </value>
+                            </Operation>
+                        </apply>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+        </caseTrue>
+        <caseFalse>
+            <Operation Class="XmlExtensions.PatchOperationRemove">
+                <xpath>Defs/XmlExtensions.SettingsMenuDef[modId="Blackmoor.BlackmoorsTweaks"]/settings/li[tag="ve_fFarming"]</xpath>
+            </Operation>
+        </caseFalse>
+    </Operation>
+</Patch>

@@ -84,6 +84,31 @@
                     </li>
                 </settings>
             </li>
+            <li Class="XmlExtensions.Setting.Section">
+                <tag>ve_fFarming</tag>
+                <settings>
+                    <li Class="XmlExtensions.Setting.Text">
+                        <text>Vanilla Furniture Expanded - Farming</text>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_vfe_allowEverythingInPlanter</key>
+                        <label>Allow all plants to be planted in the planter box.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_vfe_reduceFertilityPlanter</key>
+                        <label>Change planter box fertility.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Numeric">
+                        <key>bt_vfe_reduceFertilityPlanter_Value</key>
+                        <label>Fertility</label>
+                        <defaultValue>0.7</defaultValue>
+                        <min>0.1</min>
+                        <max>5.0</max>
+                    </li>
+                </settings>
+            </li>
         </settings>
     </XmlExtensions.SettingsMenuDef>
 </Defs>
