@@ -109,6 +109,45 @@
                     </li>
                 </settings>
             </li>
+            <li Class="XmlExtensions.Setting.Section">
+                <tag>zymex_CeilingFloorLamps</tag>
+                <settings>
+                    <li Class="XmlExtensions.Setting.Text">
+                        <text>Ceiling and Floor Lamps[continued]</text>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_cfl_updateLights</key>
+                        <label>Upgrade lights to use the mechanics introduced in Biotech.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                </settings>
+            </li>
+            <li Class="XmlExtensions.Setting.Section">
+                <tag>rs_charmweaver</tag>
+                <settings>
+                    <li Class="XmlExtensions.Setting.Text">
+                        <text>Charmweavers</text>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_rsCh_forceBiHighmate</key>
+                        <label>Change Low Mate's very high libido to force bisexual trait.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                </settings>
+            </li>
+            <li Class="XmlExtensions.Setting.Section">
+                <tag>ve_FEmpire</tag>
+                <settings>
+                    <li Class="XmlExtensions.Setting.Text">
+                        <text>Vanilla Factions Expanded - Empire</text>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_vFe_makeDeserterCraftable</key>
+                        <label>Make Deserter Armor craftable.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                </settings>
+            </li>
         </settings>
     </XmlExtensions.SettingsMenuDef>
 </Defs>

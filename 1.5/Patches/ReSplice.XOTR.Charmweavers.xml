@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="XmlExtensions.FindMod">
+        <mods>
+            <li>ReSplice.XOTR.Charmweavers</li>
+        </mods>
+        <packageId>true</packageId>
+        <caseTrue>
+            <Operation Class="XmlExtensions.FindMod">
+                <mods>
+                    <li>vanillaracesexpanded.highmate</li>
+                </mods>
+                <packageId>true</packageId>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.OptionalPatch">
+                        <modId>Blackmoor.BlackmoorsTweaks</modId>
+                        <key>bt_rsCh_forceBiHighmate</key>
+                        <!--By default, apply the patch-->
+                        <defaultValue>true</defaultValue>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.PatchOperationSafeAdd">
+                                <xpath>Defs/GeneDef[defName="VRE_Libido_VeryHigh"]</xpath>
+                                <value>
+                                    <forcedTraits>
+                                        <li>
+                                            <def>Bisexual</def>
+                                        </li>
+                                    </forcedTraits>
+                                </value>
+                            </Operation>
+                        </caseTrue>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+        </caseTrue>
+        <caseFalse>
+                <Operation Class="XmlExtensions.PatchOperationRemove">
+                    <xpath>Defs/XmlExtensions.SettingsMenuDef[modId="Blackmoor.BlackmoorsTweaks"]/settings/li[tag="rs_charmweaver"]</xpath>
+                </Operation>
+            </caseFalse>
+    </Operation>
+</Patch>

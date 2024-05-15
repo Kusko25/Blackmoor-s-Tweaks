@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="XmlExtensions.FindMod">
+        <mods>
+            <li>miodec.CeilingAndFloorLamps</li>
+        </mods>
+        <packageId>true</packageId>
+        <caseTrue>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>bt_cfl_updateLights</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <!-- Optimization -->
+                    <Operation Class="XmlExtensions.CreateDocument">
+                        <docName>bm_AllTheLamps</docName>
+                        <xpath>Defs/ThingDef[thingClass = "Building" and (@ParentName="CeilingLight" or defName = "Lighting_CornerFloorLamp" or defName = "Lighting_InvCornerFloorLamp" or defName = "Lighting_FloorLamp" or defName = "Lighting_SqWallLamp")]</xpath>
+                    </Operation>
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>UpgradeLamps</patchName>
+                        <arguments>
+                            <li>Lighting_FloorLamp</li>
+                        </arguments>
+                    </Operation>
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>UpgradeLamps</patchName>
+                        <arguments>
+                            <li>Lighting_CornerFloorLamp</li>
+                        </arguments>
+                    </Operation>
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>UpgradeLamps</patchName>
+                        <arguments>
+                            <li>Lighting_InvCornerFloorLamp</li>
+                        </arguments>
+                    </Operation>
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>UpgradeLamps</patchName>
+                        <arguments>
+                            <li>Lighting_SqWallLamp</li>
+                        </arguments>
+                    </Operation>
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>UpgradeLamps</patchName>
+                        <arguments>
+                            <li>Lighting_CeilingLamp</li>
+                        </arguments>
+                    </Operation>
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>UpgradeLamps</patchName>
+                        <arguments>
+                            <li>Lighting_CeilingLampF</li>
+                        </arguments>
+                    </Operation>
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>UpgradeLamps</patchName>
+                        <arguments>
+                            <li>Lighting_CeilingLampT</li>
+                        </arguments>
+                    </Operation>
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>UpgradeLamps</patchName>
+                        <arguments>
+                            <li>Lighting_CeilingLampTable</li>
+                        </arguments>
+                    </Operation>
+                    <Operation Class="XmlExtensions.MergeDocument">
+                        <docName>bm_AllTheLamps</docName>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+        </caseTrue>
+        <caseFalse>
+            <Operation Class="XmlExtensions.PatchOperationRemove">
+                <xpath>Defs/XmlExtensions.SettingsMenuDef[modId="Blackmoor.BlackmoorsTweaks"]/settings/li[tag="zymex_CeilingFloorLamps"]</xpath>
+            </Operation>
+        </caseFalse>
+    </Operation>
+</Patch>

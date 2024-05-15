@@ -23,5 +23,7 @@
     </modDependencies>
     <loadAfter>
         <li>imranfish.xmlextensions</li>
+        <li>ReSplice.XOTR.Charmweavers</li>
+        <li>vanillaracesexpanded.highmate</li>
     </loadAfter>
 </ModMetaData>

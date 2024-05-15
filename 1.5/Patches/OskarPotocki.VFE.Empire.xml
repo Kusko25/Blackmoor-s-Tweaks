@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="XmlExtensions.FindMod">
+        <mods>
+            <li>OskarPotocki.VFE.Empire</li>
+        </mods>
+        <packageId>true</packageId>
+        <caseTrue>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>bt_vFe_makeDeserterCraftable</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <!-- Optimization -->
+                    <Operation Class="XmlExtensions.CreateDocument">
+                        <docName>deserterArmorNodes</docName>
+                        <xpath>Defs/ThingDef[defName="VFEE_Apparel_ArmorDeserter" or defName="VFEE_Apparel_DeserterHelmet"]</xpath>
+                    </Operation>
+                    <!-- Research Project -->
+                    <Operation Class="XmlExtensions.PatchOperationAdd">
+                        <xpath>Defs</xpath>
+                        <value>
+                            <ResearchProjectDef>
+                                <defName>BM_VFEE_DeserterArmor</defName>
+                                <label>deserter gear</label>
+                                <description>Craft armor, such as is used by Imperial Deserters. Note that these also require advanced components.</description>
+                                <baseCost>4000</baseCost>
+                                <techLevel>Spacer</techLevel>
+                                <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+                                <prerequisites>
+                                    <li>CataphractArmor</li>
+                                    <li MayRequire="VanillaExpanded.VPsycastsE">VPE_EltexGear</li>
+                                    <li MayRequire="YabbyShabby.ImperialFunctionality">IF_AdvancedImperialEquipment</li>
+                                </prerequisites>
+                                <researchViewX>17.00</researchViewX>
+                                <researchViewY>0.80</researchViewY>
+                            </ResearchProjectDef>
+                        </value>
+                    </Operation>
+                    <!-- Armor -->
+                    <Operation Class="XmlExtensions.PatchOperationAttributeSet">
+                        <xmlDoc>deserterArmorNodes</xmlDoc>
+                        <xpath>deserterArmorNodes/ThingDef[defName="VFEE_Apparel_ArmorDeserter"]</xpath>
+                        <attribute>ParentName</attribute>
+                        <value>ArmorMachineableBase</value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationSafeAdd">
+                        <xmlDoc>deserterArmorNodes</xmlDoc>
+                        <xpath>deserterArmorNodes/ThingDef[defName="VFEE_Apparel_ArmorDeserter"]</xpath>
+                        <value>
+                            <recipeMaker>
+                                <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+                                <researchPrerequisite>BM_VFEE_DeserterArmor</researchPrerequisite>
+                                <skillRequirements>
+                                    <Crafting>8</Crafting>
+                                </skillRequirements>
+                                <recipeUsers Inherit="False">
+                                    <li>FabricationBench</li>
+                                </recipeUsers>
+                            </recipeMaker>
+                            <costList>
+                                <ComponentSpacer>6</ComponentSpacer>
+                                <Plasteel>120</Plasteel>
+                                <Uranium>20</Uranium>
+                                <VPE_Eltex MayRequire="VanillaExpanded.VPsycastsE">4</VPE_Eltex>
+                            </costList>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationSafeAdd">
+                        <xmlDoc>deserterArmorNodes</xmlDoc>
+                        <xpath>deserterArmorNodes/ThingDef[defName="VFEE_Apparel_ArmorDeserter"]/statBases</xpath>
+                        <value>
+                            <WorkToMake>75000</WorkToMake>
+                        </value>
+                    </Operation>
+                    <!-- Helmet -->
+                    <Operation Class="XmlExtensions.PatchOperationAttributeSet">
+                        <xmlDoc>deserterArmorNodes</xmlDoc>
+                        <xpath>deserterArmorNodes/ThingDef[defName="VFEE_Apparel_DeserterHelmet"]</xpath>
+                        <attribute>ParentName</attribute>
+                        <value>ArmorMachineableBase</value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationSafeAdd">
+                        <xmlDoc>deserterArmorNodes</xmlDoc>
+                        <xpath>deserterArmorNodes/ThingDef[defName="VFEE_Apparel_DeserterHelmet"]</xpath>
+                        <value>
+                            <recipeMaker>
+                                <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+                                <researchPrerequisite>BM_VFEE_DeserterArmor</researchPrerequisite>
+                                <skillRequirements>
+                                    <Crafting>8</Crafting>
+                                </skillRequirements>
+                                <recipeUsers Inherit="False">
+                                    <li>FabricationBench</li>
+                                </recipeUsers>
+                            </recipeMaker>
+                            <costList>
+                                <ComponentSpacer>1</ComponentSpacer>
+                                <Plasteel>50</Plasteel>
+                                <VPE_Eltex MayRequire="VanillaExpanded.VPsycastsE">1</VPE_Eltex>
+                            </costList>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationSafeAdd">
+                        <xmlDoc>deserterArmorNodes</xmlDoc>
+                        <xpath>deserterArmorNodes/ThingDef[defName="VFEE_Apparel_DeserterHelmet"]/statBases</xpath>
+                        <value>
+                            <WorkToMake>26250</WorkToMake>
+                        </value>
+                    </Operation>
+                    <!-- Merge Optimization -->
+                    <Operation Class="XmlExtensions.MergeDocument">
+                        <docName>deserterArmorNodes</docName>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+        </caseTrue>
+        <caseFalse>
+            <Operation Class="XmlExtensions.PatchOperationRemove">
+                <xpath>Defs/XmlExtensions.SettingsMenuDef[modId="Blackmoor.BlackmoorsTweaks"]/settings/li[tag="ve_FEmpire"]</xpath>
+            </Operation>
+        </caseFalse>
+    </Operation>
+</Patch>

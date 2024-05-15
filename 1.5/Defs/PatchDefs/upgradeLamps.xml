@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <XmlExtensions.PatchDef Name="UpgradeLamps" Abstract="True">
+        <parameters>
+            <li>defName</li>
+        </parameters>
+        <apply>
+            <Operation Class="XmlExtensions.PatchOperationMath">
+                <xmlDoc>bm_AllTheLamps</xmlDoc>
+                <xpath>bm_AllTheLamps/ThingDef[defName="{defName}"]/comps/li[@Class="CompProperties_Power"]/basePowerConsumption</xpath>
+                <value>2</value>
+                <operation>*</operation>
+            </Operation>
+            <Operation Class="XmlExtensions.PatchOperationSafeAdd">
+                <xmlDoc>bm_AllTheLamps</xmlDoc>
+                <xpath>bm_AllTheLamps/ThingDef[defName="{defName}"]/comps/li[@Class="CompProperties_Power"]</xpath>
+                <value>
+                    <powerUpgrades>
+                        <li>
+                            <researchProject>ColoredLights</researchProject>
+                            <factor>0.5</factor>
+                        </li>
+                    </powerUpgrades>
+                </value>
+            </Operation>
+            <Operation Class="XmlExtensions.PatchOperationSafeAdd">
+                <xmlDoc>bm_AllTheLamps</xmlDoc>
+                <xpath>bm_AllTheLamps/ThingDef[defName="{defName}"]/comps/li[@Class="CompProperties_Glower"]</xpath>
+                <value>
+                    <colorPickerEnabled>true</colorPickerEnabled>
+                    <darklightToggle>true</darklightToggle>
+                </value>
+            </Operation>
+        </apply>
+    </XmlExtensions.PatchDef>
+</Defs>
