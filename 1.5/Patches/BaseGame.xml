@@ -1,6 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
     <!-- # Core -->
+    <!-- ## Merge Powerlines -->
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>Blackmoor.BlackmoorsTweaks</modId>
+        <key>core_dropDownPower</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.PatchOperationSafeAdd">
+                <xpath>Defs/ThingDef[defName="PowerConduit"]</xpath>
+                <value>
+                    <designatorDropdown>PowerLines</designatorDropdown>
+                </value>
+            </Operation>
+        </caseTrue>
+        <caseFalse>
+            <Operation Class="XmlExtensions.PatchOperationRemove">
+                <xpath>Defs/DesignatorDropdownGroupDef[defName="PowerLines"]</xpath>
+            </Operation>
+        </caseFalse>
+    </Operation>
+    <!-- ## Clean Thrumbos -->
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>Blackmoor.BlackmoorsTweaks</modId>
+        <key>core_cleanThrumbos</key>
+        <!--By default, apply the patch-->
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.PatchOperationReplace">
+                <xpath>Defs/ThingDef[defName="Thrumbo"]/statBases/FilthRate</xpath>
+                <value>
+                    <FilthRate>2</FilthRate>
+                </value>
+            </Operation>
+        </caseTrue>
+    </Operation>
+    <!-- ## Nuzzle Thrumbos -->
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>Blackmoor.BlackmoorsTweaks</modId>
+        <key>core_nuzzleThrumbos</key>
+        <!--By default, apply the patch-->
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.PatchOperationAdd">
+                <xpath>Defs/ThingDef[defName="Thrumbo"]/race</xpath>
+                <value>
+                    <nuzzleMtbHours>6</nuzzleMtbHours>
+                </value>
+            </Operation>
+        </caseTrue>
+    </Operation>
     <!-- ## Area Target Launchers -->
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>Blackmoor.BlackmoorsTweaks</modId>
@@ -9,7 +58,7 @@
         <defaultValue>true</defaultValue>
         <caseTrue>
             <Operation Class="XmlExtensions.PatchOperationSafeAdd">
-                <xpath>Defs/ThingDef[defName="Weapon_GrenadeFrag" or defName="Weapon_GrenadeMolotov" or defName="Weapon_GrenadeEMP" or defName="Gun_IncendiaryLauncher" or defName="Gun_EmpLauncher"]/verbs/li[verbClass="Verb_LaunchProjectile"]/targetParams</xpath>
+                <xpath>Defs/ThingDef[thingCategories[li="Grenades"]]/verbs/li[verbClass="Verb_LaunchProjectile"]/targetParams</xpath>
                 <value>
                     <canTargetPawns>false</canTargetPawns>
                 </value>
@@ -120,7 +169,8 @@
                             <canTargetPawns>false</canTargetPawns>
                         </value>
                     </Operation>
-                    <Operation Class="XmlExtensions.PatchOperationSafeAdd">
+                    <!-- These don't have projectiles, so targeting equals affecting. By removing pawns and animals they don't affect anything -->
+                    <!-- <Operation Class="XmlExtensions.PatchOperationSafeAdd">
                         <xpath>Defs/AbilityDef[defName="BlindingPulse" or defName="VertigoPulse" or defName="BerserkPulse" or defName="MassChaosSkip"]/verbProperties/targetParams</xpath>
                         <value>
                             <canTargetPawns>False</canTargetPawns>
@@ -131,7 +181,7 @@
                         <value>
                             <canTargetAnimals>False</canTargetAnimals>
                         </value>
-                    </Operation>
+                    </Operation> -->
                 </caseTrue>
             </Operation>
             <!-- ## LOS Preview -->
