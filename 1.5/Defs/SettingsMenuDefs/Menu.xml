@@ -223,6 +223,19 @@
                     </li>
                 </settings>
             </li>
+            <li Class="XmlExtensions.Setting.Section">
+                <tag>pha_basic_storage</tag>
+                <settings>
+                    <li Class="XmlExtensions.Setting.Text">
+                        <text>Phaneron's Basic Storage</text>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_bs_balanceUp</key>
+                        <label>Adjust cost and storage capacity to be in line with Reel's Expanded Storage.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                </settings>
+            </li>
         </settings>
     </XmlExtensions.SettingsMenuDef>
 </Defs>

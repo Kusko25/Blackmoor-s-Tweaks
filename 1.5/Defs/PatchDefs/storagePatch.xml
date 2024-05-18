@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <XmlExtensions.PatchDef Name="storagePatch" Abstract="True">
+        <parameters>
+            <li>defName</li>
+            <li>stacksPerCell</li>
+            <li>itemCost</li>
+        </parameters>
+        <apply>
+            <Operation Class="XmlExtensions.PatchOperationReplace">
+                <xpath>Defs/ThingDef[defName="{defName}"]/building/maxItemsInCell</xpath>
+                <value>
+                    <maxItemsInCell>{stacksPerCell}</maxItemsInCell>
+                </value>
+            </Operation>
+            <Operation Class="XmlExtensions.PatchOperationReplace">
+                <xpath>Defs/ThingDef[defName="{defName}"]/costStuffCount</xpath>
+                <value>
+                    <costStuffCount>{itemCost}</costStuffCount>
+                </value>
+            </Operation>
+        </apply>
+    </XmlExtensions.PatchDef>
+</Defs>

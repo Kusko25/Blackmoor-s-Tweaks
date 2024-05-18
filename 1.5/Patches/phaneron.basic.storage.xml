@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="XmlExtensions.FindMod">
+        <mods>
+            <li>phaneron.basic.storage</li>
+        </mods>
+        <packageId>true</packageId>
+        <caseTrue>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>bt_bs_balanceUp</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>storagePatch</patchName>
+                        <arguments>
+                            <li>BasicStorageWoodenCrate</li>
+                            <li>8</li>
+                            <li>60</li>
+                        </arguments>
+                    </Operation>
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>storagePatch</patchName>
+                        <arguments>
+                            <li>BasicStorageMediumCrate</li>
+                            <li>6</li>
+                            <li>40</li>
+                        </arguments>
+                    </Operation>
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>storagePatch</patchName>
+                        <arguments>
+                            <li>BasicStorageLargeCrate</li>
+                            <li>6</li>
+                            <li>120</li>
+                        </arguments>
+                    </Operation>
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>storagePatch</patchName>
+                        <arguments>
+                            <li>BasicStoragePalletSmall</li>
+                            <li>5</li>
+                            <li>10</li>
+                        </arguments>
+                    </Operation>
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>storagePatch</patchName>
+                        <arguments>
+                            <li>BasicStorageFoodBarrel</li>
+                            <li>8</li>
+                            <li>30</li>
+                        </arguments>
+                    </Operation>
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>storagePatch</patchName>
+                        <arguments>
+                            <li>BasicStorageCask</li>
+                            <li>10</li>
+                            <li>30</li>
+                        </arguments>
+                    </Operation>
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>storagePatch</patchName>
+                        <arguments>
+                            <li>BasicStorageFuelTank</li>
+                            <li>15</li>
+                            <li>140</li>
+                        </arguments>
+                    </Operation>
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>storagePatch</patchName>
+                        <arguments>
+                            <li>BasicStorageIndustrialContainer</li>
+                            <li>9</li>
+                            <li>110</li>
+                        </arguments>
+                    </Operation>
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>storagePatch</patchName>
+                        <arguments>
+                            <li>BasicStorageCargoContainer</li>
+                            <li>10</li>
+                            <li>700</li>
+                        </arguments>
+                    </Operation>
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>storagePatch</patchName>
+                        <arguments>
+                            <li>BasicStorageMetalCrate</li>
+                            <li>10</li>
+                            <li>75</li>
+                        </arguments>
+                    </Operation>
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>storagePatch</patchName>
+                        <arguments>
+                            <li>BasicStorageLargeBundle</li>
+                            <li>8</li>
+                            <li>70</li>
+                        </arguments>
+                    </Operation>
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>storagePatch</patchName>
+                        <arguments>
+                            <li>BasicStorageSack</li>
+                            <li>8</li>
+                            <li>20</li>
+                        </arguments>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+        </caseTrue>
+        <caseFalse>
+            <Operation Class="XmlExtensions.PatchOperationRemove">
+                <xpath>Defs/XmlExtensions.SettingsMenuDef[modId="Blackmoor.BlackmoorsTweaks"]/settings/li[tag="pha_basic_storage"]</xpath>
+            </Operation>
+        </caseFalse>
+    </Operation>
+</Patch>
