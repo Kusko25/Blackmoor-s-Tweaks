@@ -236,6 +236,19 @@
                     </li>
                 </settings>
             </li>
+            <li Class="XmlExtensions.Setting.Section">
+                <tag>reel_expandedStorage</tag>
+                <settings>
+                    <li Class="XmlExtensions.Setting.Text">
+                        <text>Reel's Expanded Storage</text>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_reel_patchPatch</key>
+                        <label>Set default storage for all the patched buildings to empty, because fuck that.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                </settings>
+            </li>
         </settings>
     </XmlExtensions.SettingsMenuDef>
 </Defs>

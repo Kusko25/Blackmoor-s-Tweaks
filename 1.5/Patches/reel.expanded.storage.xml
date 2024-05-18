@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="XmlExtensions.FindMod">
+        <mods>
+            <li>reel.expanded.storage</li>
+        </mods>
+        <packageId>true</packageId>
+        <caseTrue>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>bt_reel_patchPatch</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ThingDef[defName="ToolCabinet" or defName="Dresser" or defName="Misc_FileCabinet" or defName="Table_Wardrobe" or defName="Table_RoyalDresser" or defName="VFE_DrugCabinet" or defName="VFE_MachiningCabinet" or defName="VFE_SmithyCabinet" or defName="VFE_TailorCabinet" or defName="VFE_FabricationCabinet" or defName="VFES_AmmoCrate" or defName="Table_IlluminatedDresser"]/building/defaultStorageSettings/filter</xpath>
+                        <value>
+                            <filter />
+                        </value>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+        </caseTrue>
+        <caseFalse>
+            <Operation Class="XmlExtensions.PatchOperationRemove">
+                <xpath>Defs/XmlExtensions.SettingsMenuDef[modId="Blackmoor.BlackmoorsTweaks"]/settings/li[tag="reel_expandedStorage"]</xpath>
+            </Operation>
+        </caseFalse>
+    </Operation>
+</Patch>
