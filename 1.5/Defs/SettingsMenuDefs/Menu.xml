@@ -13,7 +13,7 @@
                     </li>
                     <li Class="XmlExtensions.Setting.Checkbox">
                         <key>core_areaTargetLaunchers</key>
-                        <label>Changes AOE abilities like grenades and launchers to target ground instead of people.</label>
+                        <label>Changes AOE abilities like grenades and launchers to target ground instead of people. Should really be Vanilla, way more useful.</label>
                         <defaultValue>true</defaultValue>
                     </li>
                     <li Class="XmlExtensions.Setting.Checkbox">
@@ -30,7 +30,22 @@
                     </li>
                     <li Class="XmlExtensions.Setting.Checkbox">
                         <key>core_LOSPreviewGuns</key>
-                        <label>Enables LOS for all guns.</label>
+                        <label>Enables LOS for all guns. Warning, causes lag when multiple pawns are selected, but still useful I think.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>core_cleanThrumbos</key>
+                        <label>Sets Thrumbo filth rate to 2 (Twice that of a labrador). They are so cute we are not leaving them outside.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>core_nuzzleThrumbos</key>
+                        <label>Sets Thrumbo to nuzzle every 6 hours. Big puppy.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>core_dropDownPower</key>
+                        <label>Make a dropdown menu for all power conduits.</label>
                         <defaultValue>true</defaultValue>
                     </li>
                 </settings>
@@ -144,6 +159,66 @@
                     <li Class="XmlExtensions.Setting.Checkbox">
                         <key>bt_vFe_makeDeserterCraftable</key>
                         <label>Make Deserter Armor craftable.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                </settings>
+            </li>
+            <li Class="XmlExtensions.Setting.Section">
+                <tag>scp_ChemfuelAppliances</tag>
+                <settings>
+                    <li Class="XmlExtensions.Setting.Text">
+                        <text>Appliances Expanded</text>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_ca_industrialGeneratorsPreReq</key>
+                        <label>Add Industrial Generators prerequisite for Turbines. (If VFE Power is loaded)</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_ca_turbinesHeatPush</key>
+                        <label>Adjusts Turbines to push more heat. No more chilly rooms.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_ca_turbinesExplosive</key>
+                        <label>Add explosions to damaged Turbines because that'll make infestations funnier. (Shows time to explosion on Turbine[toFix], but doesn't spontaneously explode)</label>
+                        <defaultValue>false</defaultValue> <!-- Default to false until I can figure out why it shows time to explosion -->
+                    </li>
+                </settings>
+            </li>
+            <li Class="XmlExtensions.Setting.Section">
+                <tag>ve_rHighmate</tag>
+                <settings>
+                    <li Class="XmlExtensions.Setting.Text">
+                        <text>Vanilla Races Expanded - Highmate</text>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <!-- Doesn't seem to work you can use the policy but pregnancy doesn't seem to happen. Will continue to monitor -->
+                        <key>bt_vre_patchAsariPreg</key>
+                        <label>Allow psychic pregnancy between the same gender. Why steal from Asari and then deny lesbian fun? (Doesn't seem to work)</label>
+                        <defaultValue>false</defaultValue> <!-- Default to false until I can figure out why it doesn't work -->
+                    </li>
+                </settings>
+            </li>
+            <li Class="XmlExtensions.Setting.Section">
+                <tag>ph_gulden</tag>
+                <settings>
+                    <li Class="XmlExtensions.Setting.Text">
+                        <text>Gulden Biome</text>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_gb_makeGuFungusPlantable</key>
+                        <label>Add sowTag Ground to Gulden Fungus making it a plantable crop.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_gb_makeGuFungusFungus</key>
+                        <label>Change food type of Gulden Fungus to Fungus for Ideology Precepts.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_gb_makeYlxirGenes</key>
+                        <label>Allow the game to generate Ylxir genes, because I made the Graphics and damnit I'm using them.</label>
                         <defaultValue>true</defaultValue>
                     </li>
                 </settings>
