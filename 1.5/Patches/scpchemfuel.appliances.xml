@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="XmlExtensions.FindMod">
+        <mods>
+            <li>scpchemfuel.appliances</li>
+        </mods>
+        <packageId>true</packageId>
+        <caseTrue>
+            <!-- Optimization -->
+            <Operation Class="XmlExtensions.CreateDocument">
+                <docName>bm_chemfuelAppliances</docName>
+                <xpath>Defs/ThingDef[thingClass = "Building" and (defName = "CA_ChemfuelTurbine" or defName = "CA_WoodFiredTurbine" or defName = "CA_GasTurbine")]</xpath>
+            </Operation>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>bt_ca_industrialGeneratorsPreReq</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationAdd">
+                        <xmlDoc>bm_chemfuelAppliances</xmlDoc>
+                        <xpath>bm_chemfuelAppliances/ThingDef[defName = "CA_ChemfuelTurbine" or defName = "CA_WoodFiredTurbine" or defName = "CA_GasTurbine"]/researchPrerequisites</xpath>
+                        <value>
+                            <li MayRequire="VanillaExpanded.VFEPower">VFE_IndustrialGenerators</li>
+                        </value>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>bt_ca_turbinesHeatPush</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xmlDoc>bm_chemfuelAppliances</xmlDoc>
+                        <xpath>bm_chemfuelAppliances/ThingDef[defName = "CA_ChemfuelTurbine" or defName = "CA_WoodFiredTurbine" or defName = "CA_GasTurbine"]/comps/li[@Class="CompProperties_HeatPusher"]/heatPerSecond</xpath>
+                        <value>
+                            <heatPerSecond>17</heatPerSecond>
+                        </value>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+            <!-- NOTE: For some reason this causes the turbine to display time to explosion. It doesn't explode spontaneously but it's still weird -->
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>bt_ca_turbinesExplosive</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationSafeAdd">
+                        <xmlDoc>bm_chemfuelAppliances</xmlDoc>
+                        <checkAttributes>true</checkAttributes>
+                        <xpath>bm_chemfuelAppliances/ThingDef[defName = "CA_ChemfuelTurbine" or defName = "CA_WoodFiredTurbine" or defName = "CA_GasTurbine"]/comps</xpath>
+                        <value>
+                            <li Class="CompProperties_Explosive">
+                                <explosiveRadius>0</explosiveRadius>
+                                <explosiveExpandPerFuel>0.95</explosiveExpandPerFuel>
+                                <explosiveDamageType>Flame</explosiveDamageType>
+                                <destroyThingOnExplosionSize>2</destroyThingOnExplosionSize>
+                                <startWickHitPointsPercent>0.333</startWickHitPointsPercent>
+                                <preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+                                <preExplosionSpawnChance>1</preExplosionSpawnChance>
+                                <wickTicks>70~150</wickTicks>
+                            </li>
+                        </value>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+            <Operation Class="XmlExtensions.MergeDocument">
+                <docName>bm_chemfuelAppliances</docName>
+            </Operation>
+        </caseTrue>
+        <caseFalse>
+            <Operation Class="XmlExtensions.PatchOperationRemove">
+                <xpath>Defs/XmlExtensions.SettingsMenuDef[modId="Blackmoor.BlackmoorsTweaks"]/settings/li[tag="scp_ChemfuelAppliances"]</xpath>
+            </Operation>
+        </caseFalse>
+    </Operation>
+</Patch>
