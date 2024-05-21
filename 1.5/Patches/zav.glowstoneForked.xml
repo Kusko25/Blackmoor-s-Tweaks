@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="XmlExtensions.FindMod">
+        <mods>
+            <!-- [ZAV] Glowstone -->
+            <li>zav.glowstoneForked</li>
+        </mods>
+        <packageId>true</packageId>
+        <caseTrue>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>bt_zav_addStylesToGlowstoneSculptures</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.ForEach">
+                        <xpath>Defs/StyleCategoryDef/thingDefStyles/li[thingDef="SculptureSmall"]</xpath>
+                        <storeIn>DEF</storeIn>
+                        <apply>
+                            <Operation Class="XmlExtensions.CreateVariable">
+                                <storeIn>styleDefVal</storeIn>
+                                <value>{DEF}/thingDefStyles/li[thingDef="SculptureSmall"]/styleDef</value>
+                                <fromXml>true</fromXml>
+                                <apply>
+                                    <Operation Class="PatchOperationAdd">
+                                        <xpath>{DEF}/thingDefStyles</xpath>
+                                        <value>
+                                            <li>
+                                                <thingDef>GLO_SculptureSmall</thingDef>
+                                                <styleDef>{styleDefVal}</styleDef>
+                                            </li>
+                                        </value>
+                                    </Operation>
+                                </apply>
+                            </Operation>
+                        </apply>
+                    </Operation>
+                    <Operation Class="XmlExtensions.ForEach">
+                        <xpath>Defs/StyleCategoryDef/thingDefStyles/li[thingDef="SculptureLarge"]</xpath>
+                        <storeIn>DEF</storeIn>
+                        <apply>
+                            <Operation Class="XmlExtensions.CreateVariable">
+                                <storeIn>styleDefVal</storeIn>
+                                <value>{DEF}/thingDefStyles/li[thingDef="SculptureLarge"]/styleDef</value>
+                                <fromXml>true</fromXml>
+                                <apply>
+                                    <Operation Class="PatchOperationAdd">
+                                        <xpath>{DEF}/thingDefStyles</xpath>
+                                        <value>
+                                            <li>
+                                                <thingDef>GLO_SculptureLarge</thingDef>
+                                                <styleDef>{styleDefVal}</styleDef>
+                                            </li>
+                                        </value>
+                                    </Operation>
+                                </apply>
+                            </Operation>
+                        </apply>
+                    </Operation>
+                    <Operation Class="XmlExtensions.ForEach">
+                        <xpath>Defs/StyleCategoryDef/thingDefStyles/li[thingDef="SculptureGrand"]</xpath>
+                        <storeIn>DEF</storeIn>
+                        <apply>
+                            <Operation Class="XmlExtensions.CreateVariable">
+                                <storeIn>styleDefVal</storeIn>
+                                <value>{DEF}/thingDefStyles/li[thingDef="SculptureGrand"]/styleDef</value>
+                                <fromXml>true</fromXml>
+                                <apply>
+                                    <Operation Class="PatchOperationAdd">
+                                        <xpath>{DEF}/thingDefStyles</xpath>
+                                        <value>
+                                            <li>
+                                                <thingDef>GLO_SculptureGrand</thingDef>
+                                                <styleDef>{styleDefVal}</styleDef>
+                                            </li>
+                                        </value>
+                                    </Operation>
+                                </apply>
+                            </Operation>
+                        </apply>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>bt_zav_reduceGlowstoneAbundance</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ThingDef[defName="GLO_GlowstoneCluster"]/deepLumpSizeRange</xpath>
+                        <value>
+                            <deepLumpSizeRange>1~1</deepLumpSizeRange>
+                        </value>
+                    </Operation>
+                    <!-- I'd also like to reduce spawn rate on maps, but I don't think that can be done in xml -->
+                </caseTrue>
+            </Operation>
+        </caseTrue>
+        <caseFalse>
+            <Operation Class="XmlExtensions.PatchOperationRemove">
+                <xpath>Defs/XmlExtensions.SettingsMenuDef[modId="Blackmoor.BlackmoorsTweaks"]/settings/li[tag="zav_glowstoneForked"]</xpath>
+            </Operation>
+        </caseFalse>
+    </Operation>
+</Patch>

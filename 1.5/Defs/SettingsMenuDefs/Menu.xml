@@ -182,7 +182,7 @@
                     <li Class="XmlExtensions.Setting.Checkbox">
                         <key>bt_ca_turbinesExplosive</key>
                         <label>Add explosions to damaged Turbines because that'll make infestations funnier. (Shows time to explosion on Turbine[toFix], but doesn't spontaneously explode)</label>
-                        <defaultValue>false</defaultValue> <!-- Default to false until I can figure out why it shows time to explosion -->
+                        <defaultValue>false</defaultValue>                        <!-- Default to false until I can figure out why it shows time to explosion -->
                     </li>
                 </settings>
             </li>
@@ -196,7 +196,7 @@
                         <!-- Doesn't seem to work you can use the policy but pregnancy doesn't seem to happen. Will continue to monitor -->
                         <key>bt_vre_patchAsariPreg</key>
                         <label>Allow psychic pregnancy between the same gender. Why steal from Asari and then deny lesbian fun? (Doesn't seem to work)</label>
-                        <defaultValue>false</defaultValue> <!-- Default to false until I can figure out why it doesn't work -->
+                        <defaultValue>false</defaultValue>                        <!-- Default to false until I can figure out why it doesn't work -->
                     </li>
                 </settings>
             </li>
@@ -245,6 +245,50 @@
                     <li Class="XmlExtensions.Setting.Checkbox">
                         <key>bt_reel_patchPatch</key>
                         <label>Set default storage for all the patched buildings to empty, because fuck that.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                </settings>
+            </li>
+            <li Class="XmlExtensions.Setting.Section">
+                <tag>erin_cottageCollection</tag>
+                <settings>
+                    <li Class="XmlExtensions.Setting.Text">
+                        <text>Erin's Cottage Collection</text>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_erin_fireplaceGatherSpot</key>
+                        <label>Remove gather spot property from fireplaces. For some reason it keeps resetting on save load.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                </settings>
+            </li>
+            <li Class="XmlExtensions.Setting.Section">
+                <tag>ecc_Furniture</tag>
+                <settings>
+                    <li Class="XmlExtensions.Setting.Text">
+                        <text>Eccentric Tech - Spacer Furniture</text>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_ecc_removeSlowdownFromCeilingLamps</key>
+                        <label>Ceiling lamps inherit from torch base which defines a pathCost. This removes that.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                </settings>
+            </li>
+            <li Class="XmlExtensions.Setting.Section">
+                <tag>zav_glowstoneForked</tag>
+                <settings>
+                    <li Class="XmlExtensions.Setting.Text">
+                        <text>[ZAV] Glowstone</text>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_zav_addStylesToGlowstoneSculptures</key>
+                        <label>Add styles to Glowstone Sculptures.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_zav_reduceGlowstoneAbundance</key>
+                        <label>Make Glowstone deposits smaller.</label>
                         <defaultValue>true</defaultValue>
                     </li>
                 </settings>

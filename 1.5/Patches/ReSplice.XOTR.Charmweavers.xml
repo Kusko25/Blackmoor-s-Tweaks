@@ -30,13 +30,53 @@
                             </Operation>
                         </caseTrue>
                     </Operation>
+                    <Operation Class="XmlExtensions.OptionalPatch">
+                        <modId>Blackmoor.BlackmoorsTweaks</modId>
+                        <key>bt_rsCh_fixWingDependency</key>
+                        <!--By default, apply the patch-->
+                        <defaultValue>true</defaultValue>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.PatchOperationSafeAdd">
+                                <xpath>Defs/GeneDef[defName="RS_Wing_Batlike"]</xpath>
+                                <value>
+                                    <prerequisite>Hemogenic</prerequisite>
+                                </value>
+                            </Operation>
+                        </caseTrue>
+                    </Operation>
+                    <Operation Class="XmlExtensions.FindMod">
+                        <mods>
+                            <li>vanillaracesexpanded.hussar</li>
+                        </mods>
+                        <packageId>true</packageId>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.OptionalPatch">
+                                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                                <key>bt_rsCh_addGlideToWings</key>
+                                <!--By default, apply the patch-->
+                                <defaultValue>true</defaultValue>
+                                <caseTrue>
+                                    <Operation Class="XmlExtensions.PatchOperationSafeAdd">
+                                        <xpath>Defs/GeneDef[@Name="RS_GeneWingBase"]</xpath>
+                                        <value>
+                                            <modExtensions>
+                                                <li Class="VanillaGenesExpanded.GeneExtension">
+                                                    <hediffToWholeBody>VREH_Glidewings</hediffToWholeBody>
+                                                </li>
+                                            </modExtensions>
+                                        </value>
+                                    </Operation>
+                                </caseTrue>
+                            </Operation>
+                        </caseTrue>
+                    </Operation>
                 </caseTrue>
             </Operation>
         </caseTrue>
         <caseFalse>
-                <Operation Class="XmlExtensions.PatchOperationRemove">
-                    <xpath>Defs/XmlExtensions.SettingsMenuDef[modId="Blackmoor.BlackmoorsTweaks"]/settings/li[tag="rs_charmweaver"]</xpath>
-                </Operation>
-            </caseFalse>
+            <Operation Class="XmlExtensions.PatchOperationRemove">
+                <xpath>Defs/XmlExtensions.SettingsMenuDef[modId="Blackmoor.BlackmoorsTweaks"]/settings/li[tag="rs_charmweaver"]</xpath>
+            </Operation>
+        </caseFalse>
     </Operation>
 </Patch>

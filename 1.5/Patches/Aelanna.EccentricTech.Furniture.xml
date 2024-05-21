@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="XmlExtensions.FindMod">
+        <mods>
+            <!-- Eccentric Tech - Spacer Furniture -->
+            <li>Aelanna.EccentricTech.Furniture</li>
+        </mods>
+        <packageId>true</packageId>
+        <caseTrue>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>bt_ecc_removeSlowdownFromCeilingLamps</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                        <xpath>Defs/ThingDef[@Name="EccentricFurniture_CeilingLampBase"]</xpath>
+                        <value>
+                            <pathCost>0</pathCost>
+                        </value>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+        </caseTrue>
+        <caseFalse>
+            <Operation Class="XmlExtensions.PatchOperationRemove">
+                <xpath>Defs/XmlExtensions.SettingsMenuDef[modId="Blackmoor.BlackmoorsTweaks"]/settings/li[tag="ecc_Furniture"]</xpath>
+            </Operation>
+        </caseFalse>
+    </Operation>
+</Patch>

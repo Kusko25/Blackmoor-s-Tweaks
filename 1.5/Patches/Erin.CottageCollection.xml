@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="XmlExtensions.FindMod">
+        <mods>
+            <li>Erin.CottageCollection</li>
+        </mods>
+        <packageId>true</packageId>
+        <caseTrue>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>bt_erin_fireplaceGatherSpot</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationRemove">
+                        <xpath>Defs/ThingDef[defName="CCot_Fireplace" or defName="CCot_FireplaceElectric"]/comps/li[compClass="CompGatherSpot"]</xpath>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+        </caseTrue>
+        <caseFalse>
+            <Operation Class="XmlExtensions.PatchOperationRemove">
+                <xpath>Defs/XmlExtensions.SettingsMenuDef[modId="Blackmoor.BlackmoorsTweaks"]/settings/li[tag="erin_cottageCollection"]</xpath>
+            </Operation>
+        </caseFalse>
+    </Operation>
+</Patch>
