@@ -87,6 +87,19 @@
                 </settings>
             </li>
             <li Class="XmlExtensions.Setting.Section">
+                <tag>anomaly</tag>
+                <settings>
+                    <li Class="XmlExtensions.Setting.Text">
+                        <text>Anomaly</text>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>anomaly_harbingerTreesIndoors</key>
+                        <label>Make Harbinger Trees grow indoors.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                </settings>
+            </li>
+            <li Class="XmlExtensions.Setting.Section">
                 <tag>ve_architect</tag>
                 <settings>
                     <li Class="XmlExtensions.Setting.Text">
@@ -289,6 +302,42 @@
                     <li Class="XmlExtensions.Setting.Checkbox">
                         <key>bt_zav_reduceGlowstoneAbundance</key>
                         <label>Make Glowstone deposits smaller.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_zav_nerfGlowstoneValue</key>
+                        <label>Reduce the value of Glowstone.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_zav_smallGlowstoneSmallVolume</key>
+                        <label>Marks small glowstones as small volume (like silver and gold) and increases stack limit to 500.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                </settings>
+            </li>
+            <li Class="XmlExtensions.Setting.Section">
+                <tag>fsf_advancedBionics</tag>
+                <settings>
+                    <li Class="XmlExtensions.Setting.Text">
+                        <text>[FSF] Advanced Bionics Expansion</text>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_fsf_ab_servitor_removal</key>
+                        <label>Enable removal of servitor modules. That shit is evil.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                </settings>
+            </li>
+            <li Class="XmlExtensions.Setting.Section">
+                <tag>vcepu</tag>
+                <settings>
+                    <li Class="XmlExtensions.Setting.Text">
+                        <text>Vanilla Chemfuel Expanded - Unofficial Expansion</text>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_vcepu_make_deepchem_from_chemfuel</key>
+                        <label>Add recipe for making deepchem from chemfuel and toxic waste.</label>
                         <defaultValue>true</defaultValue>
                     </li>
                 </settings>
