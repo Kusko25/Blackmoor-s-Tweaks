@@ -241,4 +241,33 @@
             </Operation>
         </caseFalse>
     </Operation>
+    <!-- # Anomaly -->
+    <Operation Class="XmlExtensions.FindMod">
+        <mods>
+            <li>Ludeon.Rimworld.Anomaly</li>
+        </mods>
+        <packageId>true</packageId>
+        <caseTrue>
+            <!-- ## Harbinger Trees indoors -->
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>anomaly_harbingerTreesIndoors</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                        <xpath>Defs/ThingDef[defName="Plant_TreeHarbinger"]/plant</xpath>
+                        <value>
+                            <interferesWithRoof>false</interferesWithRoof>
+                        </value>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+        </caseTrue>
+        <caseFalse>
+            <Operation Class="XmlExtensions.PatchOperationRemove">
+                <xpath>Defs/XmlExtensions.SettingsMenuDef[modId="Blackmoor.BlackmoorsTweaks"]/settings/li[tag="anomaly"]</xpath>
+            </Operation>
+        </caseFalse>
+    </Operation>
 </Patch>
