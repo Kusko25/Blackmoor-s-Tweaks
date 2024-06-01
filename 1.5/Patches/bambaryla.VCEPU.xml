@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="XmlExtensions.FindMod">
+        <mods>
+            <li>bambaryla.VCEPU</li>
+        </mods>
+        <packageId>true</packageId>
+        <caseTrue>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>bt_vcepu_make_deepchem_from_chemfuel</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationAdd">
+                        <xpath>Defs</xpath>
+                        <value>
+                            <PipeSystem.ProcessDef>
+                                <defName>VCEUE_ChemfuelIntoDeepchem</defName>
+                                <label>Make Deepchem from Chemfuel.</label>
+                                <ingredients>
+                                    <li>
+                                        <pipeNet>VCHE_ChemfuelNet</pipeNet>
+                                        <thing>Chemfuel</thing>
+                                        <countNeeded>9</countNeeded>
+                                    </li>
+                                    <li>
+                                        <pipeNet>VCEUE_ToxicWasteNet</pipeNet>
+                                        <thing>Wastepack</thing>
+                                        <countNeeded>1</countNeeded>
+                                    </li>
+                                </ingredients>
+                                <results>
+                                    <li>
+                                        <pipeNet>VCHE_DeepchemNet</pipeNet>
+                                        <thing>VCHE_Deepchem</thing>
+                                        <count>3</count>
+                                    </li>
+                                </results>
+                                <ticks>300</ticks>
+                                <destroyIngredientsDirectly>true</destroyIngredientsDirectly>
+                                <researchPrerequisites>
+                                    <li>VCEUE_ChemfuelEnriching</li>
+                                </researchPrerequisites>
+                            </PipeSystem.ProcessDef>
+                            <ResearchProjectDef>
+                                <defName>VCEUE_ChemfuelEnriching</defName>
+                                <label>Chemfuel Enriching</label>
+                                <description>Research how to turn Chemfuel back into Deepchem by deliberately adding impurities found in Toxic Waste.</description>
+                                <baseCost>3000</baseCost>
+                                <techLevel>Industrial</techLevel>
+                                <prerequisites>
+                                    <li>VCEUE_ChemfuelRefining</li>
+                                </prerequisites>
+                                <researchViewX>1.50</researchViewX>
+                                <researchViewY>1.00</researchViewY>
+                                <tab>VCEUE_Refinery_Research</tab>
+                            </ResearchProjectDef>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationAdd">
+                        <xpath>Defs/ThingDef[defName="PS_DeepchemRefinery"]/comps/li[@Class="PipeSystem.CompProperties_AdvancedResourceProcessor"]/processes</xpath>
+                        <value>
+                            <li>VCEUE_ChemfuelIntoDeepchem</li>
+                        </value>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+        </caseTrue>
+        <caseFalse>
+            <Operation Class="XmlExtensions.PatchOperationRemove">
+                <xpath>Defs/XmlExtensions.SettingsMenuDef[modId="Blackmoor.BlackmoorsTweaks"]/settings/li[tag="vcepu"]</xpath>
+            </Operation>
+        </caseFalse>
+    </Operation>
+</Patch>
