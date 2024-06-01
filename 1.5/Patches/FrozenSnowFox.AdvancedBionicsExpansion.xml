@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="XmlExtensions.FindMod">
+        <mods>
+            <li>FrozenSnowFox.AdvancedBionicsExpansion</li>
+        </mods>
+        <packageId>true</packageId>
+        <caseTrue>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>bt_fsf_ab_servitor_removal</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationAdd">
+                        <xpath>Defs</xpath>
+                        <value>
+                            <RecipeDef ParentName="SurgeryRemoveImplantBase">
+                                <defName>RemoveFSFImplantBrainServitor</defName>
+                                <label>remove servitor module</label>
+                                <description>Remove servitor module.</description>
+                                <descriptionHyperlinks>
+                                    <ThingDef>FSFImplantBrainServitor</ThingDef>
+                                    <HediffDef>FSFImplantBrainServitor</HediffDef>
+                                </descriptionHyperlinks>
+                                <jobString>Removing servitor module.</jobString>
+                                <removesHediff>FSFImplantBrainServitor</removesHediff>
+                            </RecipeDef>
+                        </value>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+        </caseTrue>
+        <caseFalse>
+            <Operation Class="XmlExtensions.PatchOperationRemove">
+                <xpath>Defs/XmlExtensions.SettingsMenuDef[modId="Blackmoor.BlackmoorsTweaks"]/settings/li[tag="fsf_advancedBionics"]</xpath>
+            </Operation>
+        </caseFalse>
+    </Operation>
+</Patch>
