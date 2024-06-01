@@ -90,10 +90,62 @@
                     <Operation Class="XmlExtensions.PatchOperationReplace">
                         <xpath>Defs/ThingDef[defName="GLO_GlowstoneCluster"]/deepLumpSizeRange</xpath>
                         <value>
-                            <deepLumpSizeRange>1~1</deepLumpSizeRange>
+                            <deepLumpSizeRange>1~3</deepLumpSizeRange>
                         </value>
                     </Operation>
-                    <!-- I'd also like to reduce spawn rate on maps, but I don't think that can be done in xml -->
+                    <Operation Class="XmlExtensions.PatchOperationAdd">
+                        <xpath>Defs/ThingDef[defName="GLO_GlowstoneCluster"]</xpath>
+                        <value>
+                            <deepCountPerCell>80</deepCountPerCell>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ThingDef[defName="GLO_MineableGlowstone"]/building/mineableScatterCommonality</xpath>
+                        <value>
+                            <mineableScatterCommonality>0.2</mineableScatterCommonality>
+                        </value>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>bt_zav_nerfGlowstoneValue</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ThingDef[defName="GLO_GlowstoneCluster"]/statBases/MarketValue</xpath>
+                        <value>
+                            <MarketValue>125</MarketValue>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ThingDef[defName="GLO_LargeGlowstone"]/statBases/MarketValue</xpath>
+                        <value>
+                            <MarketValue>35</MarketValue>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ThingDef[defName="GLO_SmallGlowstone"]/statBases/MarketValue</xpath>
+                        <value>
+                            <MarketValue>10</MarketValue>
+                        </value>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>bt_zav_smallGlowstoneSmallVolume</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationAdd">
+                        <xpath>Defs/ThingDef[defName="GLO_SmallGlowstone"]</xpath>
+                        <value>
+                            <stackLimit>500</stackLimit>
+                            <smallVolume>true</smallVolume>
+                        </value>
+                    </Operation>
                 </caseTrue>
             </Operation>
         </caseTrue>
