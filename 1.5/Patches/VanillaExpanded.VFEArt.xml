@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="XmlExtensions.FindMod">
+        <mods>
+            <li>VanillaExpanded.VFEArt</li>
+        </mods>
+        <packageId>true</packageId>
+        <caseTrue>
+            <Operation Class="XmlExtensions.PatchOperationAdd">
+                <xpath>Defs/ThingDef[@Name="RugBase"]</xpath>
+                <value>
+                    <tradeTags>
+                        <li>Art</li>
+                    </tradeTags>
+                </value>
+            </Operation>
+        </caseTrue>
+    </Operation>
+</Patch>
