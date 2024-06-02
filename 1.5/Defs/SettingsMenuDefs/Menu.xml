@@ -314,6 +314,31 @@
                         <label>Marks small glowstones as small volume (like silver and gold) and increases stack limit to 500.</label>
                         <defaultValue>true</defaultValue>
                     </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_zav_glowstone_pillar</key>
+                        <label>Create a recipe for a glowstone pillar from VFE Art.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_zav_glowstone_relief</key>
+                        <label>Create a recipe for a glowstone relief from VFE Art.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_zav_glowstone_monument</key>
+                        <label>Create a recipe for a glowstone monument from VFE Art.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_zav_glowstone_carving</key>
+                        <label>Create a recipe for a glowstone carving from VFE Art.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_zav_glowstone_obelisk</key>
+                        <label>Create a recipe for a glowstone obelisk from VFE Art.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
                 </settings>
             </li>
             <li Class="XmlExtensions.Setting.Section">

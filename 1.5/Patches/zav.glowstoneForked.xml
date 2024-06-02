@@ -148,6 +148,270 @@
                     </Operation>
                 </caseTrue>
             </Operation>
+            <Operation Class="XmlExtensions.FindMod">
+                <mods>
+                    <li>VanillaExpanded.VFEArt</li>
+                </mods>
+                <packageId>true</packageId>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.OptionalPatch">
+                        <modId>Blackmoor.BlackmoorsTweaks</modId>
+                        <key>bt_zav_glowstone_pillar</key>
+                        <!--By default, apply the patch-->
+                        <defaultValue>true</defaultValue>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.PatchOperationAdd">
+                                <xpath>Defs</xpath>
+                                <value>
+                                    <ThingDef ParentName="GLO_SculptureBase">
+                                        <defName>VFE_GLO_Pillar</defName>
+                                        <label>glowstone Pillar</label>
+                                        <description>An impassable, decorated glowstone pillar capable of supporting a roof.</description>
+                                        <graphicData>
+                                            <graphicClass>Graphic_Single</graphicClass>
+                                            <texPath>Buildings/Art/Pillar/Pillar</texPath>
+                                            <drawSize>(1,1)</drawSize>
+                                        </graphicData>
+                                        <rotatable>false</rotatable>
+                                        <size>(1,1)</size>
+                                        <canOverlapZones>false</canOverlapZones>
+                                        <statBases>
+                                            <MaxHitPoints>350</MaxHitPoints>
+                                            <Beauty>20</Beauty>
+                                            <Mass>10</Mass>
+                                            <WorkToMake>30000</WorkToMake>
+                                        </statBases>
+                                        <altitudeLayer>Building</altitudeLayer>
+                                        <passability>Impassable</passability>
+                                        <blockWind>true</blockWind>
+                                        <castEdgeShadows>true</castEdgeShadows>
+                                        <fillPercent>1</fillPercent>
+                                        <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+                                        <holdsRoof>true</holdsRoof>
+                                        <staticSunShadowHeight>1.0</staticSunShadowHeight>
+                                        <blockLight>true</blockLight>
+                                        <costList>
+                                            <GLO_GlowstoneCluster>3</GLO_GlowstoneCluster>
+                                        </costList>
+                                        <recipeMaker>
+                                            <researchPrerequisite>
+                                                <li>VFE_Res_WallCarvings</li>
+                                            </researchPrerequisite>
+                                        </recipeMaker>
+                                        <comps>
+                                            <li Class="CompProperties_Glower">
+                                                <glowRadius>10</glowRadius>
+                                                <glowColor>(150,185,205,0)</glowColor>
+                                            </li>
+                                        </comps>
+                                    </ThingDef>
+                                </value>
+                            </Operation>
+                        </caseTrue>
+                    </Operation>
+                    <Operation Class="XmlExtensions.OptionalPatch">
+                        <modId>Blackmoor.BlackmoorsTweaks</modId>
+                        <key>bt_zav_glowstone_relief</key>
+                        <!--By default, apply the patch-->
+                        <defaultValue>true</defaultValue>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.PatchOperationAdd">
+                                <xpath>Defs</xpath>
+                                <value>
+                                    <ThingDef ParentName="GLO_SculptureBase">
+                                        <defName>VFE_GLO_Relief</defName>
+                                        <label>glowstone Relief</label>
+                                        <description>An impassable, long piece of glowstone wall with an artistic relief carved into it.</description>
+                                        <graphicData>
+                                            <graphicClass>Graphic_Multi</graphicClass>
+                                            <texPath>Buildings/Art/Relief/Relief</texPath>
+                                            <drawSize>(3,3)</drawSize>
+                                        </graphicData>
+                                        <rotatable>true</rotatable>
+                                        <size>(3,1)</size>
+                                        <canOverlapZones>false</canOverlapZones>
+                                        <statBases>
+                                            <MaxHitPoints>650</MaxHitPoints>
+                                            <Beauty>170</Beauty>
+                                            <Mass>40</Mass>
+                                            <WorkToMake>80000</WorkToMake>
+                                        </statBases>
+                                        <altitudeLayer>Building</altitudeLayer>
+                                        <passability>Impassable</passability>
+                                        <blockWind>true</blockWind>
+                                        <castEdgeShadows>true</castEdgeShadows>
+                                        <fillPercent>1</fillPercent>
+                                        <defaultPlacingRot>South</defaultPlacingRot>
+                                        <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+                                        <holdsRoof>true</holdsRoof>
+                                        <staticSunShadowHeight>1.0</staticSunShadowHeight>
+                                        <blockLight>true</blockLight>
+                                        <costList>
+                                            <GLO_GlowstoneCluster>18</GLO_GlowstoneCluster>
+                                        </costList>
+                                        <recipeMaker>
+                                            <researchPrerequisite>
+                                                <li>VFE_Res_WallCarvings</li>
+                                            </researchPrerequisite>
+                                        </recipeMaker>
+                                        <comps>
+                                            <li Class="CompProperties_Glower">
+                                                <glowRadius>15</glowRadius>
+                                                <glowColor>(150,185,205,0)</glowColor>
+                                            </li>
+                                        </comps>
+                                    </ThingDef>
+                                </value>
+                            </Operation>
+                        </caseTrue>
+                    </Operation>
+                    <Operation Class="XmlExtensions.OptionalPatch">
+                        <modId>Blackmoor.BlackmoorsTweaks</modId>
+                        <key>bt_zav_glowstone_monument</key>
+                        <!--By default, apply the patch-->
+                        <defaultValue>true</defaultValue>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.PatchOperationAdd">
+                                <xpath>Defs</xpath>
+                                <value>
+                                    <ThingDef ParentName="GLO_SculptureBase">
+                                        <defName>VFE_GLO_Monument</defName>
+                                        <label>glowstone Monument</label>
+                                        <description>An impassable, massive monument with an ornate pedestal and a large art piece.</description>
+                                        <graphicData>
+                                            <graphicClass>Graphic_Random</graphicClass>
+                                            <texPath>Buildings/Art/Monument</texPath>
+                                            <drawSize>(3.8,3.8)</drawSize>
+                                        </graphicData>
+                                        <rotatable>false</rotatable>
+                                        <size>(3,3)</size>
+                                        <canOverlapZones>false</canOverlapZones>
+                                        <statBases>
+                                            <MaxHitPoints>250</MaxHitPoints>
+                                            <Beauty>470</Beauty>
+                                            <Mass>25</Mass>
+                                            <WorkToMake>100000</WorkToMake>
+                                        </statBases>
+                                        <altitudeLayer>Building</altitudeLayer>
+                                        <passability>Impassable</passability>
+                                        <blockWind>true</blockWind>
+                                        <castEdgeShadows>true</castEdgeShadows>
+                                        <fillPercent>1</fillPercent>
+                                        <costList>
+                                            <GLO_GlowstoneCluster>18</GLO_GlowstoneCluster>
+                                        </costList>
+                                        <recipeMaker>
+                                            <researchPrerequisite>
+                                                <li>VFE_Res_Monuments</li>
+                                            </researchPrerequisite>
+                                        </recipeMaker>
+                                        <comps>
+                                            <li Class="CompProperties_Glower">
+                                                <glowRadius>20</glowRadius>
+                                                <glowColor>(150,185,205,0)</glowColor>
+                                            </li>
+                                        </comps>
+                                    </ThingDef>
+                                </value>
+                            </Operation>
+                        </caseTrue>
+                    </Operation>
+                    <Operation Class="XmlExtensions.OptionalPatch">
+                        <modId>Blackmoor.BlackmoorsTweaks</modId>
+                        <key>bt_zav_glowstone_carving</key>
+                        <!--By default, apply the patch-->
+                        <defaultValue>true</defaultValue>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.PatchOperationAdd">
+                                <xpath>Defs</xpath>
+                                <value>
+                                    <ThingDef ParentName="GLO_SculptureBase">
+                                        <defName>VFE_GLO_Carving</defName>
+                                        <label>glowstone Carving</label>
+                                        <description>A small carving sculpted from a waist-tall wall piece. Can act as cover.</description>
+                                        <graphicData>
+                                            <graphicClass>Graphic_Random</graphicClass>
+                                            <texPath>Buildings/Art/Carving</texPath>
+                                            <drawSize>(2,2)</drawSize>
+                                        </graphicData>
+                                        <fillPercent>0.35</fillPercent>
+                                        <rotatable>false</rotatable>
+                                        <statBases>
+                                            <MaxHitPoints>120</MaxHitPoints>
+                                            <Mass>5</Mass>
+                                            <Beauty>50</Beauty>
+                                            <WorkToMake>18000</WorkToMake>
+                                        </statBases>
+                                        <costList>
+                                            <GLO_GlowstoneCluster>3</GLO_GlowstoneCluster>
+                                        </costList>
+                                        <recipeMaker>
+                                            <researchPrerequisite>
+                                                <li>VFE_Res_WallCarvings</li>
+                                            </researchPrerequisite>
+                                        </recipeMaker>
+                                        <comps>
+                                            <li Class="CompProperties_Glower">
+                                                <glowRadius>10</glowRadius>
+                                                <glowColor>(150,185,205,0)</glowColor>
+                                            </li>
+                                        </comps>
+                                    </ThingDef>
+                                </value>
+                            </Operation>
+                        </caseTrue>
+                    </Operation>
+                    <Operation Class="XmlExtensions.OptionalPatch">
+                        <modId>Blackmoor.BlackmoorsTweaks</modId>
+                        <key>bt_zav_glowstone_obelisk</key>
+                        <!--By default, apply the patch-->
+                        <defaultValue>true</defaultValue>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.PatchOperationAdd">
+                                <xpath>Defs</xpath>
+                                <value>
+                                    <ThingDef ParentName="GLO_SculptureBase">
+                                        <defName>VFE_GLO_Obelisk</defName>
+                                        <label>glowstone Obelisk</label>
+                                        <description>A tall piece of material shaped into an obelisk with an art piece carved into the sides.</description>
+                                        <graphicData>
+                                            <graphicClass>Graphic_Random</graphicClass>
+                                            <texPath>Buildings/Art/Obelisk</texPath>
+                                            <drawSize>(3,3)</drawSize>
+                                        </graphicData>
+                                        <altitudeLayer>Building</altitudeLayer>
+                                        <passability>Impassable</passability>
+                                        <blockWind>true</blockWind>
+                                        <castEdgeShadows>true</castEdgeShadows>
+                                        <fillPercent>1</fillPercent>
+                                        <rotatable>false</rotatable>
+                                        <statBases>
+                                            <MaxHitPoints>200</MaxHitPoints>
+                                            <Mass>14</Mass>
+                                            <Beauty>150</Beauty>
+                                            <WorkToMake>40000</WorkToMake>
+                                        </statBases>
+                                        <costList>
+                                            <GLO_GlowstoneCluster>6</GLO_GlowstoneCluster>
+                                        </costList>
+                                        <recipeMaker>
+                                            <researchPrerequisite>
+                                                <li>VFE_Res_Obelisk</li>
+                                            </researchPrerequisite>
+                                        </recipeMaker>
+                                        <comps>
+                                            <li Class="CompProperties_Glower">
+                                                <glowRadius>15</glowRadius>
+                                                <glowColor>(150,185,205,0)</glowColor>
+                                            </li>
+                                        </comps>
+                                    </ThingDef>
+                                </value>
+                            </Operation>
+                        </caseTrue>
+                    </Operation>
+                </caseTrue>
+            </Operation>
         </caseTrue>
         <caseFalse>
             <Operation Class="XmlExtensions.PatchOperationRemove">
