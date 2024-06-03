@@ -367,6 +367,19 @@
                     </li>
                 </settings>
             </li>
+            <li Class="XmlExtensions.Setting.Section">
+                <tag>lts_implants</tag>
+                <settings>
+                    <li Class="XmlExtensions.Setting.Text">
+                        <text>Integrated Implants</text>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_lts_hideTails</key>
+                        <label>Hide the visual render of the added tails. They are a bit creepy.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                </settings>
+            </li>
         </settings>
     </XmlExtensions.SettingsMenuDef>
 </Defs>
