@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>Blackmoor.BlackmoorsTweaks</modId>
+        <key>bt_unite_researchTabs</key>
+        <!--By default, apply the patch-->
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.PatchOperationAdd">
+                <xpath>Defs</xpath>
+                <value>
+                    <ResearchTabDef>
+                        <defName>BlackmoorUnifiedTabs</defName>
+                        <label>more Research</label>
+                        <generalTitle>Research projects from a variety of mods</generalTitle>
+                        <generalDescription>Mods that add only one or two projects get moved here.</generalDescription>
+                    </ResearchTabDef>
+                </value>
+            </Operation>
+            <Operation Class="XmlExtensions.FindMod">
+                <mods>
+                    <li>VanillaExpanded.VCookE</li>
+                </mods>
+                <logic>or</logic>
+                <packageId>true</packageId>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationAdd">
+                        <xpath>Defs/ResearchTabDef[defName="VCE_Cooking"]</xpath>
+                        <value>
+                            <generalTitle>Vanilla Food Expanded</generalTitle>
+                            <generalDescription>Anything that relates to the kitchen.</generalDescription>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.FindMod">
+                        <mods>
+                            <li>VanillaExpanded.VBrewE</li>
+                        </mods>
+                        <logic>or</logic>
+                        <packageId>true</packageId>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.PatchOperationRemove">
+                                <xpath>Defs/ThingDef[defName="Schematic"]/comps/li[@Class="CompProperties_Book"]/doers/li[@Class="BookOutcomeProperties_GainResearch"]/tabs/VCE_Brewing</xpath>
+                            </Operation>
+                            <Operation Class="XmlExtensions.PatchOperationRemove">
+                                <xpath>Defs/ResearchTabDef[defName="VCE_Brewing"]</xpath>
+                            </Operation>
+                            <Operation Class="XmlExtensions.PatchOperationReplace">
+                                <xpath>Defs/ResearchProjectDef[tab="VCE_Brewing"]/researchViewX</xpath>
+                                <value>
+                                    <researchViewX>2</researchViewX>
+                                </value>
+                            </Operation>
+                            <Operation Class="XmlExtensions.PatchOperationReplace">
+                                <xpath>Defs/ResearchProjectDef[tab="VCE_Brewing"]/tab</xpath>
+                                <value>
+                                    <tab>VCE_Cooking</tab>
+                                </value>
+                            </Operation>
+                        </caseTrue>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+            <Operation Class="XmlExtensions.FindMod">
+                <mods>
+                    <li>vat.epoeforked</li>
+                </mods>
+                <logic>or</logic>
+                <packageId>true</packageId>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.FindMod">
+                        <mods>
+                            <li>SamBucher.ADogSaidAnimalProsthetics2</li>
+                        </mods>
+                        <logic>or</logic>
+                        <packageId>true</packageId>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.PatchOperationRemove">
+                                <xpath>Defs/ResearchTabDef[defName="ADogSaid2"]</xpath>
+                            </Operation>
+                            <Operation Class="XmlExtensions.PatchOperationReplace">
+                                <xpath>Defs/ResearchProjectDef[tab="ADogSaid2"]/tab</xpath>
+                                <value>
+                                    <tab>EPOE</tab>
+                                </value>
+                            </Operation>
+                        </caseTrue>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+            <Operation Class="XmlExtensions.FindMod">
+                <mods>
+                    <li>Rabbit.EoDVanguard</li>
+                </mods>
+                <logic>or</logic>
+                <packageId>true</packageId>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationRemove">
+                        <xpath>Defs/ResearchTabDef[defName="EdgeOfDescensionResearch"]</xpath>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ResearchProjectDef[tab="EdgeOfDescensionResearch"]/researchViewX</xpath>
+                        <value>
+                            <researchViewX>0</researchViewX>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ResearchProjectDef[tab="EdgeOfDescensionResearch"]/tab</xpath>
+                        <value>
+                            <tab>BlackmoorUnifiedTabs</tab>
+                        </value>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+            <Operation Class="XmlExtensions.FindMod">
+                <mods>
+                    <li>ReGrowth.BOTR.Core</li>
+                </mods>
+                <logic>or</logic>
+                <packageId>true</packageId>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationRemove">
+                        <xpath>Defs/ResearchTabDef[defName="RG_ReGrowth"]</xpath>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ResearchProjectDef[tab="RG_ReGrowth"]/researchViewX</xpath>
+                        <value>
+                            <researchViewX>1</researchViewX>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ResearchProjectDef[tab="RG_ReGrowth"]/tab</xpath>
+                        <value>
+                            <tab>BlackmoorUnifiedTabs</tab>
+                        </value>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+            <Operation Class="XmlExtensions.FindMod">
+                <mods>
+                    <li>Neronix17.Outland.Core</li>
+                </mods>
+                <logic>or</logic>
+                <packageId>true</packageId>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationRemove">
+                        <xpath>Defs/ResearchTabDef[defName="Outland_ResearchTab"]</xpath>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ResearchProjectDef[@ParentName="Outland_ResearchBase"]/researchViewX</xpath>
+                        <value>
+                            <researchViewX>2</researchViewX>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ResearchProjectDef[defName="Outland_DefencePlatforms"]/researchViewY</xpath>
+                        <value>
+                            <researchViewY>0</researchViewY>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ResearchProjectDef[defName="Outland_DefenceStructures"]/researchViewY</xpath>
+                        <value>
+                            <researchViewY>1</researchViewY>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ResearchProjectDef[@Name="Outland_ResearchBase"]/tab</xpath>
+                        <value>
+                            <tab>BlackmoorUnifiedTabs</tab>
+                        </value>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+            <Operation Class="XmlExtensions.FindMod">
+                <mods>
+                    <li>kikohi.jewelry</li>
+                </mods>
+                <logic>or</logic>
+                <packageId>true</packageId>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationRemove">
+                        <xpath>Defs/ResearchTabDef[defName="Jewelry"]</xpath>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ResearchProjectDef[tab="Jewelry"]/researchViewX</xpath>
+                        <value>
+                            <researchViewX>3</researchViewX>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ResearchProjectDef[tab="Jewelry"]/tab</xpath>
+                        <value>
+                            <tab>BlackmoorUnifiedTabs</tab>
+                        </value>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+            <Operation Class="XmlExtensions.FindMod">
+                <mods>
+                    <li>YabbyShabby.ImperialFunctionality</li>
+                </mods>
+                <logic>or</logic>
+                <packageId>true</packageId>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationRemove">
+                        <xpath>Defs/ResearchTabDef[defName="IF_ImperialTech"]</xpath>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ResearchProjectDef[@ParentName="IF_ImperialTech"]/researchViewX</xpath>
+                        <value>
+                            <researchViewX>4</researchViewX>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ResearchProjectDef[@Name="IF_ImperialTech"]/tab</xpath>
+                        <value>
+                            <tab>BlackmoorUnifiedTabs</tab>
+                        </value>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+        </caseTrue>
+    </Operation>
+</Patch>
