@@ -66,6 +66,309 @@
                     </Operation>
                 </caseTrue>
             </Operation>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>bt_vcepu_chemfuel_recipes</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <!-- Recipes for both old and new processes -->
+                    <Operation Class="XmlExtensions.PatchOperationAdd">
+                        <xpath>Defs</xpath>
+                        <value>
+                            <PipeSystem.ProcessDef>
+                                <defName>VCEUE_BM_RawPlasteelFromDeepchem</defName>
+                                <label>Make Raw Plasteel from Deepchem.</label>
+                                <ingredients>
+                                    <li>
+                                        <pipeNet>VCHE_DeepchemNet</pipeNet>
+                                        <thing>VCHE_Deepchem</thing>
+                                        <countNeeded>50</countNeeded>
+                                    </li>
+                                </ingredients>
+                                <results>
+                                    <li>
+                                        <thing>VCEUE_RawPlasteel</thing>
+                                        <count>20</count>
+                                    </li>
+                                </results>
+                                <ticks>120000</ticks>
+                                <destroyIngredientsDirectly>true</destroyIngredientsDirectly>
+                            </PipeSystem.ProcessDef>
+
+                            <PipeSystem.ProcessDef>
+                                <defName>VCEUE_BM_RawPlasteelFromChemfuel</defName>
+                                <label>Make Raw Plasteel from Chemfuel.</label>
+                                <ingredients>
+                                    <li>
+                                        <pipeNet>VCHE_ChemfuelNet</pipeNet>
+                                        <thing>Chemfuel</thing>
+                                        <countNeeded>150</countNeeded>
+                                    </li>
+                                    <li>
+                                        <pipeNet>VREA_NeutroamineNet</pipeNet>
+                                        <thing>Neutroamine</thing>
+                                        <countNeeded>1</countNeeded>
+                                    </li>
+                                </ingredients>
+                                <results>
+                                    <li>
+                                        <thing>VCEUE_RawPlasteel</thing>
+                                        <count>20</count>
+                                    </li>
+                                </results>
+                                <ticks>120000</ticks>
+                                <destroyIngredientsDirectly>true</destroyIngredientsDirectly>
+                            </PipeSystem.ProcessDef>
+
+                            <PipeSystem.ProcessDef>
+                                <defName>VCEUE_BM_RawThreadsFromDeepchem</defName>
+                                <label>Make Unrefined Fibers from Deepchem.</label>
+                                <ingredients>
+                                    <li>
+                                        <pipeNet>VCHE_DeepchemNet</pipeNet>
+                                        <thing>VCHE_Deepchem</thing>
+                                        <countNeeded>50</countNeeded>
+                                    </li>
+                                </ingredients>
+                                <results>
+                                    <li>
+                                        <thing>VCEUE_RawThread</thing>
+                                        <count>30</count>
+                                    </li>
+                                </results>
+                                <ticks>120000</ticks>
+                                <destroyIngredientsDirectly>true</destroyIngredientsDirectly>
+                            </PipeSystem.ProcessDef>
+
+                            <PipeSystem.ProcessDef>
+                                <defName>VCEUE_BM_RawThreadsFromChemfuel</defName>
+                                <label>Make Unrefined Fibers from Chemfuel.</label>
+                                <ingredients>
+                                    <li>
+                                        <pipeNet>VCHE_ChemfuelNet</pipeNet>
+                                        <thing>Chemfuel</thing>
+                                        <countNeeded>150</countNeeded>
+                                    </li>
+                                    <li>
+                                        <pipeNet>VREA_NeutroamineNet</pipeNet>
+                                        <thing>Neutroamine</thing>
+                                        <countNeeded>1</countNeeded>
+                                    </li>
+                                </ingredients>
+                                <results>
+                                    <li>
+                                        <thing>VCEUE_RawThread</thing>
+                                        <count>30</count>
+                                    </li>
+                                </results>
+                                <ticks>120000</ticks>
+                                <destroyIngredientsDirectly>true</destroyIngredientsDirectly>
+                            </PipeSystem.ProcessDef>
+                        </value>
+                    </Operation>
+                    <!-- Remove simple processor -->
+                    <Operation Class="XmlExtensions.PatchOperationRemove">
+                        <xpath>Defs/ThingDef[defName="VCEUE_RawPlasteelRefinery" or defName="VCEUE_AdvancedAutoWeavery"]/comps/li[@Class="PipeSystem.CompProperties_ResourceProcessor"]</xpath>
+                    </Operation>
+                    <!-- Inspector tabs on both-->
+                    <Operation Class="XmlExtensions.PatchOperationAdd">
+                        <xpath>Defs/ThingDef[defName="VCEUE_RawPlasteelRefinery" or defName="VCEUE_AdvancedAutoWeavery"]</xpath>
+                        <value>
+                            <inspectorTabs>
+                                <li>PipeSystem.ITab_Processor</li>
+                            </inspectorTabs>
+                        </value>
+                    </Operation>
+                    <!-- Complex processor - Plasteel Refinery -->
+                    <Operation Class="XmlExtensions.PatchOperationAdd">
+                        <xpath>Defs/ThingDef[defName="VCEUE_RawPlasteelRefinery"]/comps</xpath>
+                        <value>
+                            <li MayRequire="ludeon.rimworld.biotech" Class="CompProperties_ThingContainer">
+                                <compClass>CompThingContainer</compClass>
+                                <stackLimit>100</stackLimit>
+                                <drawContainedThing>false</drawContainedThing>
+                                <dropEffecterDef>MechChargerWasteRemoved</dropEffecterDef>
+                            </li>
+                            <li MayRequire="ludeon.rimworld.biotech" Class="CompProperties_WasteProducer">
+                                <showContentsInInspectPane>true</showContentsInInspectPane>
+                            </li>
+                            <li Class="PipeSystem.CompProperties_AdvancedResourceProcessor">
+                                <showBufferInfo>false</showBufferInfo>
+                                <notWorkingKey>VCEUE_CantRefineFSX</notWorkingKey>
+                                <progressBarOffset>(0, 0, -0.65)</progressBarOffset>
+                                <showResultItem>true</showResultItem>
+                                <processes>
+                                    <li>VCEUE_BM_RawPlasteelFromDeepchem</li>
+                                    <li>VCEUE_BM_RawPlasteelFromChemfuel</li>
+                                </processes>
+                                <!-- <soundAmbient>VCHE_RefineryAmbient</soundAmbient> -->
+                            </li>
+                            <li Class="PipeSystem.CompProperties_Resource">
+                                <pipeNet>VREA_NeutroamineNet</pipeNet>
+                            </li>
+                            <li Class="PipeSystem.CompProperties_Resource">
+                                <pipeNet>VCHE_DeepchemNet</pipeNet>
+                            </li>
+                            <li Class="PipeSystem.CompProperties_Resource">
+                                <pipeNet>VCHE_ChemfuelNet</pipeNet>
+                            </li>
+                            <li MayRequire="ludeon.rimworld.biotech" Class="PipeSystem.CompProperties_Resource">
+                                <pipeNet>VCEUE_ToxicWasteNet</pipeNet>
+                            </li>
+                        </value>
+                    </Operation>
+                    <!-- Complex processor - Auto Weavery -->
+                    <Operation Class="XmlExtensions.PatchOperationAdd">
+                        <xpath>Defs/ThingDef[defName="VCEUE_AdvancedAutoWeavery"]/comps</xpath>
+                        <value>
+                            <li MayRequire="ludeon.rimworld.biotech" Class="CompProperties_ThingContainer">
+                                <compClass>CompThingContainer</compClass>
+                                <stackLimit>100</stackLimit>
+                                <drawContainedThing>false</drawContainedThing>
+                                <dropEffecterDef>MechChargerWasteRemoved</dropEffecterDef>
+                            </li>
+                            <li MayRequire="ludeon.rimworld.biotech" Class="CompProperties_WasteProducer">
+                                <showContentsInInspectPane>true</showContentsInInspectPane>
+                            </li>
+                            <li Class="PipeSystem.CompProperties_AdvancedResourceProcessor">
+                                <showBufferInfo>false</showBufferInfo>
+                                <notWorkingKey>VCEUE_CantRefineFSX</notWorkingKey>
+                                <progressBarOffset>(0, 0, -0.65)</progressBarOffset>
+                                <showResultItem>true</showResultItem>
+                                <processes>
+                                    <li>VCEUE_BM_RawThreadsFromDeepchem</li>
+                                    <li>VCEUE_BM_RawThreadsFromChemfuel</li>
+                                </processes>
+                                <!-- <soundAmbient>VCHE_RefineryAmbient</soundAmbient> -->
+                            </li>
+                            <li Class="PipeSystem.CompProperties_Resource">
+                                <pipeNet>VREA_NeutroamineNet</pipeNet>
+                            </li>
+                            <li Class="PipeSystem.CompProperties_Resource">
+                                <pipeNet>VCHE_DeepchemNet</pipeNet>
+                            </li>
+                            <li Class="PipeSystem.CompProperties_Resource">
+                                <pipeNet>VCHE_ChemfuelNet</pipeNet>
+                            </li>
+                            <li MayRequire="ludeon.rimworld.biotech" Class="PipeSystem.CompProperties_Resource">
+                                <pipeNet>VCEUE_ToxicWasteNet</pipeNet>
+                            </li>
+                        </value>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>bt_vcepu_remove_manual_recipes</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationRemove">
+                        <xpath>Defs/RecipeDef[defName="VCEUE_Make_PlasteelFromRawPlasteel" or defName="VCEUE_Make_Plasteel_2" or defName="VCEUE_Make_Plasteel_4" or defName="VCEUE_Make_DevilstrandFromRawThread" or defName="VCEUE_Make_Devilstrand_2" or defName="VCEUE_Make_Devilstrand_4" or defName="VCEUE_Make_SynthreadFromRawThread" or defName="VCEUE_Make_Synthread_2" or defName="VCEUE_Make_Synthread_4" or defName="VCEUE_Make_HyperweaveFromRawThread" or defName="VCEUE_Make_Hyperweave_2" or defName="VCEUE_Make_Hyperweave_4"]</xpath>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>bt_vcepu_rebalance_clave_recipes</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ItemProcessor.CombinationDef[defName="VCEUE_AutoclaveCuringRecipe"]/amount/li</xpath>
+                        <value>
+                            <li>200</li>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ItemProcessor.CombinationDef[defName="VCEUE_AutoclaveCuringRecipe"]/yield</xpath>
+                        <value>
+                            <yield>100</yield>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ItemProcessor.CombinationDef[defName="VCEUE_AutoclaveCuringRecipe"]/singleTimeIfNotQualityIncreasing</xpath>
+                        <value>
+                            <singleTimeIfNotQualityIncreasing>1</singleTimeIfNotQualityIncreasing>
+                        </value>
+                    </Operation>
+
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ItemProcessor.CombinationDef[defName="VCEUE_DevilstrandWeavingRecipe"]/amount/li</xpath>
+                        <value>
+                            <li>200</li>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ItemProcessor.CombinationDef[defName="VCEUE_DevilstrandWeavingRecipe"]/yield</xpath>
+                        <value>
+                            <yield>80</yield>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ItemProcessor.CombinationDef[defName="VCEUE_DevilstrandWeavingRecipe"]/singleTimeIfNotQualityIncreasing</xpath>
+                        <value>
+                            <singleTimeIfNotQualityIncreasing>1</singleTimeIfNotQualityIncreasing>
+                        </value>
+                    </Operation>
+
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ItemProcessor.CombinationDef[defName="VCEUE_SynthreadWeavingRecipe"]/amount/li</xpath>
+                        <value>
+                            <li>200</li>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ItemProcessor.CombinationDef[defName="VCEUE_SynthreadWeavingRecipe"]/yield</xpath>
+                        <value>
+                            <yield>60</yield>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ItemProcessor.CombinationDef[defName="VCEUE_SynthreadWeavingRecipe"]/singleTimeIfNotQualityIncreasing</xpath>
+                        <value>
+                            <singleTimeIfNotQualityIncreasing>1</singleTimeIfNotQualityIncreasing>
+                        </value>
+                    </Operation>
+
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ItemProcessor.CombinationDef[defName="VCEUE_HyperweaveWeavingRecipe"]/amount/li</xpath>
+                        <value>
+                            <li>200</li>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ItemProcessor.CombinationDef[defName="VCEUE_HyperweaveWeavingRecipe"]/yield</xpath>
+                        <value>
+                            <yield>40</yield>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationReplace">
+                        <xpath>Defs/ItemProcessor.CombinationDef[defName="VCEUE_HyperweaveWeavingRecipe"]/singleTimeIfNotQualityIncreasing</xpath>
+                        <value>
+                            <singleTimeIfNotQualityIncreasing>1</singleTimeIfNotQualityIncreasing>
+                        </value>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>Blackmoor.BlackmoorsTweaks</modId>
+                <key>bt_vcepu_expensiveDetoxifier</key>
+                <!--By default, apply the patch-->
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationAdd">
+                        <xpath>Defs/ThingDef[defName="VCEUE_WasteDetofixier"]/costList</xpath>
+                        <value>
+                            <Plasteel>100</Plasteel>
+                            <Gold>50</Gold>
+                            <ComponentSpacer>2</ComponentSpacer>
+                            <NanostructuringChip>4</NanostructuringChip>
+                        </value>
+                    </Operation>
+                </caseTrue>
+            </Operation>
         </caseTrue>
         <caseFalse>
             <Operation Class="XmlExtensions.PatchOperationRemove">

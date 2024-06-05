@@ -4,7 +4,19 @@
         <defName>BlackmoorTweaks</defName>
         <modId>Blackmoor.BlackmoorsTweaks</modId>
         <label>Blackmoor's Tweaks</label>
-        <settings>
+        <settings><li Class="XmlExtensions.Setting.Section">
+                <tag>misc</tag>
+                <settings>
+                    <li Class="XmlExtensions.Setting.Text">
+                        <text>Miscellaneous</text>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_unite_researchTabs</key>
+                        <label>Unites various mods with only a few projects into a single research tab, or merges them with relevant tabs.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                </settings>
+            </li>
             <li Class="XmlExtensions.Setting.Section">
                 <tag>core</tag>
                 <settings>
