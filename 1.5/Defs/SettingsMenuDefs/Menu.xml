@@ -407,6 +407,19 @@
                     </li>
                 </settings>
             </li>
+            <li Class="XmlExtensions.Setting.Section">
+                <tag>smPhil_vehicleFramework</tag>
+                <settings>
+                    <li Class="XmlExtensions.Setting.Text">
+                        <text>SmashPhil's Vehicle Framework</text>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>bt_smPhil_corpsePatch</key>
+                        <label>Move vehicle corpses to a new category.</label>
+                        <defaultValue>true</defaultValue>
+                    </li>
+                </settings>
+            </li>
         </settings>
     </XmlExtensions.SettingsMenuDef>
 </Defs>

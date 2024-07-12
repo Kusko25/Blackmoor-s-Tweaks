@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingCategoryDef MayRequire="SmashPhil.VehicleFramework">
+    <defName>CorpsesVehicles</defName>
+    <label>vehicle corpses</label>
+    <parent>Corpses</parent>
+  </ThingCategoryDef>
+</Defs>
