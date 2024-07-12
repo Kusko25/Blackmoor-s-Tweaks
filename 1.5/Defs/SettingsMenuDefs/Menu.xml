@@ -392,6 +392,21 @@
                     </li>
                 </settings>
             </li>
+            <li Class="XmlExtensions.Setting.Section">
+                <tag>d_badhygiene</tag>
+                <settings>
+                    <li Class="XmlExtensions.Setting.Text">
+                        <text>Dubs Bad Hygiene</text>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Numeric">
+                        <key>bt_dbh_septicTankTreatRate_Value</key>
+                        <label>Septic Tank Treatment Rate</label>
+                        <defaultValue>50</defaultValue>
+                        <min>0</min>
+                        <max>1000</max>
+                    </li>
+                </settings>
+            </li>
         </settings>
     </XmlExtensions.SettingsMenuDef>
 </Defs>

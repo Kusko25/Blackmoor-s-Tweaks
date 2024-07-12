@@ -17,6 +17,35 @@
                     </Operation>
                 </caseTrue>
             </Operation>
+            <Operation Class="XmlExtensions.FindMod">
+                <mods>
+                    <li>FrozenSnowFox.AdvancedBionicsExpansion</li>
+                    <li>vat.epoeforked</li>
+                </mods>
+                <logic>and</logic>
+                <packageId>true</packageId>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationRemove">
+                        <xpath>Defs/HediffDef[@MayRequire="vat.epoeforked" and descriptionHyperlinks/ThingDef="AdvancedBionicArm"]</xpath>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationRemove">
+                        <xpath>Defs/HediffDef[@MayRequire="vat.epoeforked" and descriptionHyperlinks/ThingDef="PowerArm"]</xpath>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationRemove">
+                        <xpath>Defs/HediffDef[@MayRequire="vat.epoeforked" and descriptionHyperlinks/ThingDef="AdvancedPowerArm"]</xpath>
+                    </Operation>
+
+                    <Operation Class="XmlExtensions.PatchOperationRemove">
+                        <xpath>Defs/RecipeDef[@MayRequire="vat.epoeforked" and descriptionHyperlinks/ThingDef="AdvancedBionicArm"]</xpath>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationRemove">
+                        <xpath>Defs/RecipeDef[@MayRequire="vat.epoeforked" and descriptionHyperlinks/ThingDef="PowerArm"]</xpath>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationRemove">
+                        <xpath>Defs/HediffDef[@MayRequire="vat.epoeforked" and descriptionHyperlinks/ThingDef="AdvancedPowerArm"]</xpath>
+                    </Operation>
+                </caseTrue>
+            </Operation>
         </caseTrue>
         <caseFalse>
             <Operation Class="XmlExtensions.PatchOperationRemove">

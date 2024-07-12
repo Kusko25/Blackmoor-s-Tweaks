@@ -79,6 +79,33 @@
                             </Operation>
                         </apply>
                     </Operation>
+                    <Operation Class="XmlExtensions.ForEach">
+                        <xpath>Defs/StyleCategoryDef/thingDefStyles/li[thingDef="Column"]</xpath>
+                        <storeIn>DEF</storeIn>
+                        <apply>
+                            <Operation Class="XmlExtensions.CreateVariable">
+                                <storeIn>styleDefVal</storeIn>
+                                <value>{DEF}/thingDefStyles/li[thingDef="Column"]/styleDef</value>
+                                <fromXml>true</fromXml>
+                                <apply>
+                                    <Operation Class="XmlExtensions.Conditional">
+                                        <xpath>Defs/StyleCategoryDef/thingDefStyles/li[thingDef="GLO_GlowstoneColumn" and styleDef="{styleDefVal}"]</xpath>
+                                        <caseFalse>
+                                            <Operation Class="PatchOperationAdd">
+                                                <xpath>{DEF}/thingDefStyles</xpath>
+                                                <value>
+                                                    <li>
+                                                        <thingDef>GLO_GlowstoneColumn</thingDef>
+                                                        <styleDef>{styleDefVal}</styleDef>
+                                                    </li>
+                                                </value>
+                                            </Operation>
+                                        </caseFalse>
+                                    </Operation>
+                                </apply>
+                            </Operation>
+                        </apply>
+                    </Operation>
                 </caseTrue>
             </Operation>
             <Operation Class="XmlExtensions.OptionalPatch">
