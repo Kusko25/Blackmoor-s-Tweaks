@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="XmlExtensions.FindMod">
+        <mods>
+            <li>Artemiish.ServiceWeapon</li>
+        </mods>
+        <packageId>true</packageId>
+        <caseTrue>
+            <Operation Class="XmlExtensions.PatchOperationReplace">
+                <xpath>Defs/AbilityDef[defName="Artemiish_AbilityGrip"]/comps/li[@Class="ServiceWeapon.CompProperties_WeaponMaker"]/clamorRadius</xpath>
+                <value>
+                    <clamorRadius>26</clamorRadius>
+                </value>
+            </Operation>
+            <Operation Class="XmlExtensions.PatchOperationReplace">
+                <xpath>Defs/AbilityDef[defName="Artemiish_AbilitySpin"]/comps/li[@Class="ServiceWeapon.CompProperties_WeaponMaker"]/clamorRadius</xpath>
+                <value>
+                    <clamorRadius>23</clamorRadius>
+                </value>
+            </Operation>
+            <Operation Class="XmlExtensions.PatchOperationReplace">
+                <xpath>Defs/AbilityDef[defName="Artemiish_AbilityPierce"]/comps/li[@Class="ServiceWeapon.CompProperties_WeaponMaker"]/clamorRadius</xpath>
+                <value>
+                    <clamorRadius>40</clamorRadius>
+                </value>
+            </Operation>
+            <Operation Class="XmlExtensions.PatchOperationReplace">
+                <xpath>Defs/AbilityDef[defName="Artemiish_AbilityCharge"]/comps/li[@Class="ServiceWeapon.CompProperties_WeaponMaker"]/clamorRadius</xpath>
+                <value>
+                    <clamorRadius>25</clamorRadius>
+                </value>
+            </Operation>
+            <Operation Class="XmlExtensions.PatchOperationReplace">
+                <xpath>Defs/AbilityDef[defName="Artemiish_AbilitySurge"]/comps/li[@Class="ServiceWeapon.CompProperties_WeaponMaker"]/clamorRadius</xpath>
+                <value>
+                    <clamorRadius>24</clamorRadius>
+                </value>
+            </Operation>
+
+            <!-- Buff other forms -->
+            <Operation Class="XmlExtensions.PatchOperationReplace">
+                <xpath>Defs/ThingDef[defName="Artemiish_SWCharge"]/statBases/RangedWeapon_Cooldown</xpath>
+                <value>
+                    <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+                </value>
+            </Operation>
+            <Operation Class="XmlExtensions.PatchOperationReplace">
+                <xpath>Defs/ThingDef[defName="Artemiish_SWShatter"]/statBases/RangedWeapon_Cooldown</xpath>
+                <value>
+                    <RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
+                </value>
+            </Operation>
+            <Operation Class="XmlExtensions.PatchOperationReplace">
+                <xpath>Defs/ThingDef[defName="Artemiish_SWPierce"]/verbs/li[verbClass="Verb_Shoot"]/warmupTime</xpath>
+                <value>
+                    <warmupTime>2</warmupTime>
+                </value>
+            </Operation>
+            <Operation Class="XmlExtensions.PatchOperationReplace">
+                <xpath>Defs/ThingDef[defName="Artemiish_SWPierce"]/verbs/li[verbClass="Verb_Shoot"]/range</xpath>
+                <value>
+                    <range>42.9</range>
+                </value>
+            </Operation>
+        </caseTrue>
+    </Operation>
+</Patch>
