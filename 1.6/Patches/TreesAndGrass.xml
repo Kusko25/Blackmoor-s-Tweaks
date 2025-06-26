@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[@Name="TreeBase"]/plant</xpath>
+    <value>
+      <minGrowthTemperature>-4</minGrowthTemperature>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Plant_Grass"]/plant</xpath>
+    <value>
+      <minGrowthTemperature>-4</minGrowthTemperature>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Plant_TallGrass"]/plant</xpath>
+    <value>
+      <minGrowthTemperature>-4</minGrowthTemperature>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Plant_Bush"]/plant</xpath>
+    <value>
+      <minGrowthTemperature>-4</minGrowthTemperature>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Plant_Brambles"]/plant</xpath>
+    <value>
+      <minGrowthTemperature>-4</minGrowthTemperature>
+    </value>
+  </Operation>
+
+</Patch>

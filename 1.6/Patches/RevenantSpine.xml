@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/AbilityDef[defName="RevenantInvisibility"]/statBases/Ability_Duration</xpath>
+    <value>
+      <Ability_Duration>60</Ability_Duration>
+    </value>
+  </Operation>
+
+</Patch>
