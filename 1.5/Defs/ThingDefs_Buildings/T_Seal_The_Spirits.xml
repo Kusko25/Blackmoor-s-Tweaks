@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="FurnitureBase" MayRequire="Trickity.Seal.Spirits">
+        <defName>T_BuldingRitualIncense</defName>
+        <label>ritual incense</label>
+        <description>A potent mixture of burning herbs used to stimulate shamans and aid in their rituals. The simple design does not disturb nature.</description>
+        <category>Building</category>
+        <tickerType>Normal</tickerType>
+        <drawerType>RealtimeOnly</drawerType>
+        <fillPercent>0.15</fillPercent>
+        <statBases>
+            <MaxHitPoints>50</MaxHitPoints>
+            <WorkToBuild>500</WorkToBuild>
+            <Mass>10</Mass>
+            <Flammability>1.0</Flammability>
+        </statBases>
+        <selectable>true</selectable>
+        <designationCategory>Anomaly</designationCategory>
+        <uiOrder>104</uiOrder>
+        <minifiedDef>MinifiedThing</minifiedDef>
+        <stuffCategories>
+            <li>Metallic</li>
+            <li>Woody</li>
+            <li>Stony</li>
+        </stuffCategories>
+        <costStuffCount>30</costStuffCount>
+        <costList>
+            <PsychoidLeaves>30</PsychoidLeaves>
+            <SmokeleafLeaves>30</SmokeleafLeaves>
+        </costList>
+        <placeWorkers>
+            <li>PlaceWorker_ShowFacilitiesConnections</li>
+            <li>PlaceWorker_ShowFacilitiesRange</li>
+            <li>PlaceWorker_GlowRadius</li>
+            <li>PlaceWorker_Heater</li>
+        </placeWorkers>
+        <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+        <researchPrerequisites>
+            <li>T_InhibitingIncense</li>
+        </researchPrerequisites>
+        <graphicData>
+            <texPath>Things/Building/T_Incense/Incense</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shadowData>
+                <volume>(0.55, 0.35, 0.3)</volume>
+                <offset>(0, 0, -0.28)</offset>
+            </shadowData>
+            <damageData>
+                <rect>(0.2,0.3,0.6,0.6)</rect>
+            </damageData>
+            <drawSize>(1,1)</drawSize>
+        </graphicData>
+        <altitudeLayer>Building</altitudeLayer>
+        <passability>PassThroughOnly</passability>
+        <rotatable>false</rotatable>
+        <pathCost>50</pathCost>
+        <building>
+            <buildingTags>
+                <li>Anomaly</li>
+            </buildingTags>
+            <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+        </building>
+        <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+        <resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+        <comps>
+            <li Class="CompProperties_Facility">
+                <maxSimultaneous>4</maxSimultaneous>
+                <maxDistance>4.9</maxDistance>
+                <requiresLOS>true</requiresLOS>
+                <statOffsets>
+                    <WorkTableWorkSpeedFactor>0.1</WorkTableWorkSpeedFactor>
+                </statOffsets>
+            </li>
+            <li MayRequire="owlchemist.simplefx.smoke2" Class="Flecker.CompProperties_Smoker">
+                <particleSize>0.7</particleSize>
+                <particleOffset>(0,0,0.4)</particleOffset>
+            </li>
+        </comps>
+    </ThingDef>
+</Defs>

@@ -2,18 +2,18 @@
 <Patch>
     <Operation Class="XmlExtensions.FindMod">
         <mods>
-            <li>vanillaracesexpanded.highmate</li>
+            <li>vanillaracesexpanded.hussar</li>
         </mods>
         <packageId>true</packageId>
         <caseTrue>
             <Operation Class="XmlExtensions.OptionalPatch">
                 <modId>Blackmoor.BlackmoorsTweaks</modId>
-                <key>bt_vre_highmate_femOnly</key>
+                <key>bt_vre_hussar_femOnly</key>
                 <!--By default, apply the patch-->
                 <defaultValue>true</defaultValue>
                 <caseTrue>
                     <Operation Class="XmlExtensions.PatchOperationAdd">
-                        <xpath>Defs/XenotypeDef[defName="Highmate" or defName="VRE_Lowmate"]/genes</xpath>
+                        <xpath>Defs/XenotypeDef[defName="Hussar" or defName="VREH_Uhlan"]/genes</xpath>
                         <value>
                             <li MayRequire="vanillaracesexpanded.phytokin" Name="AlphaGenesSwap">VRE_Female</li>
                         </value>
@@ -23,7 +23,7 @@
         </caseTrue>
         <caseFalse>
             <Operation Class="XmlExtensions.PatchOperationRemove">
-                <xpath>Defs/XmlExtensions.SettingsMenuDef[modId="Blackmoor.BlackmoorsTweaks"]/settings/li[tag="ve_rHighmate"]</xpath>
+                <xpath>Defs/XmlExtensions.SettingsMenuDef[modId="Blackmoor.BlackmoorsTweaks"]/settings/li[tag="ve_rHussar"]</xpath>
             </Operation>
         </caseFalse>
     </Operation>

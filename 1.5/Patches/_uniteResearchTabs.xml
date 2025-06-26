@@ -221,4 +221,35 @@
             </Operation>
         </caseTrue>
     </Operation>
+    <!--                         STORAGE                         -->
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>Blackmoor.BlackmoorsTweaks</modId>
+        <key>bt_unite_storageTabs</key>
+        <!--By default, apply the patch-->
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.Conditional">
+                <xpath>Defs/ResearchProjectDef[contains(label, "storage") or contains(label, "Storage") or label="neolithic item display"]</xpath>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationAdd">
+                        <xpath>Defs</xpath>
+                        <value>
+                            <ResearchTabDef>
+                                <defName>BlackmoorUnifiedTabsStorage</defName>
+                                <label>Storage</label>
+                                <generalTitle>Where and how to put what</generalTitle>
+                                <generalDescription>Research projects related to the proper storing of things.</generalDescription>
+                            </ResearchTabDef>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                        <xpath>Defs/ResearchProjectDef[contains(label, "storage") or contains(label, "Storage") or label="neolithic item display"]</xpath>
+                        <value>
+                            <tab>BlackmoorUnifiedTabsStorage</tab>
+                        </value>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+        </caseTrue>
+    </Operation>
 </Patch>
