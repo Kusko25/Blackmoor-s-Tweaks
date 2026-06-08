@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="USH_GlittertechFabricator"]/recipes</xpath>
+    <value>
+        <li>USH_FormMechChipSignal</li>
+        <li>USH_FormMechChipPowerfocus</li>
+        <li>USH_FormMechChipNanostructuring</li>
+    </value>
+  </Operation>
+</Patch>
