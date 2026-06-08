@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <RecipeDef MayRequire="Ludeon.RimWorld.Biotech" ParentName="USH_BaseGlittertechForming">
+        <defName>USH_FormMechChipSignal</defName>
+        <label>form signal chip</label>
+        <description>Form signal chip.</description>
+        <jobString>Forming signal chip.</jobString>
+        <researchPrerequisites>
+            <li>USH_GlittertechFabrication</li>
+            <li>StandardMechtech</li>
+        </researchPrerequisites>
+        <formingTicks>20000</formingTicks>
+        <gestationCycles>1</gestationCycles>
+        <ingredients Inherit="false">
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Silver</li>
+                    </thingDefs>
+                </filter>
+                <count>1.2</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Gold</li>
+                    </thingDefs>
+                </filter>
+                <count>0.6</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Synthread</li>
+                    </thingDefs>
+                </filter>
+                <count>12</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>SubcoreBasic</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>USH_Glittercore</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>SignalChip</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <products>
+            <SignalChip>2</SignalChip>
+        </products>
+        <descriptionHyperlinks>
+            <ThingDef>SignalChip</ThingDef>
+        </descriptionHyperlinks>
+        <modExtensions>
+            <li Class="USH_GE.ModExtension_UseGlittertechBill">
+                <powerNeeded>800</powerNeeded>
+            </li>
+        </modExtensions>
+    </RecipeDef>
+    <RecipeDef MayRequire="Ludeon.RimWorld.Biotech" ParentName="USH_BaseGlittertechForming">
+        <defName>USH_FormMechChipPowerfocus</defName>
+        <label>form powerfocus chip</label>
+        <description>Form powerfocus chip.</description>
+        <jobString>Forming powerfocus chip.</jobString>
+        <researchPrerequisites>
+            <li>USH_GlittertechFabrication</li>
+            <li>HighMechtech</li>
+        </researchPrerequisites>
+        <formingTicks>20000</formingTicks>
+        <gestationCycles>2</gestationCycles>
+        <ingredients Inherit="false">
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Silver</li>
+                    </thingDefs>
+                </filter>
+                <count>1.2</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Gold</li>
+                    </thingDefs>
+                </filter>
+                <count>0.6</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Synthread</li>
+                    </thingDefs>
+                </filter>
+                <count>12</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>SubcoreBasic</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>USH_Glittercore</li>
+                    </thingDefs>
+                </filter>
+                <count>2</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>PowerfocusChip</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <products>
+            <PowerfocusChip>2</PowerfocusChip>
+        </products>
+        <descriptionHyperlinks>
+            <ThingDef>PowerfocusChip</ThingDef>
+        </descriptionHyperlinks>
+        <modExtensions>
+            <li Class="USH_GE.ModExtension_UseGlittertechBill">
+                <powerNeeded>1600</powerNeeded>
+            </li>
+        </modExtensions>
+    </RecipeDef>
+    <RecipeDef MayRequire="Ludeon.RimWorld.Biotech" ParentName="USH_BaseGlittertechForming">
+        <defName>USH_FormMechChipNanostructuring</defName>
+        <label>form nano structuring chip</label>
+        <description>Form nano structuring chip.</description>
+        <jobString>Forming nano structuring chip.</jobString>
+        <researchPrerequisites>
+            <li>USH_GlittertechFabrication</li>
+            <li>UltraMechtech</li>
+        </researchPrerequisites>
+        <formingTicks>20000</formingTicks>
+        <gestationCycles>4</gestationCycles>
+        <ingredients Inherit="false">
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Silver</li>
+                    </thingDefs>
+                </filter>
+                <count>1.2</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Gold</li>
+                    </thingDefs>
+                </filter>
+                <count>0.6</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Synthread</li>
+                    </thingDefs>
+                </filter>
+                <count>12</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>SubcoreRegular</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>USH_Glittercore</li>
+                    </thingDefs>
+                </filter>
+                <count>2</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>NanostructuringChip</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <products>
+            <NanostructuringChip>2</NanostructuringChip>
+        </products>
+        <descriptionHyperlinks>
+            <ThingDef>NanostructuringChip</ThingDef>
+        </descriptionHyperlinks>
+        <modExtensions>
+            <li Class="USH_GE.ModExtension_UseGlittertechBill">
+                <powerNeeded>2400</powerNeeded>
+            </li>
+        </modExtensions>
+    </RecipeDef>
+</Defs>
