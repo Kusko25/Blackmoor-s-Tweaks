@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <ThingDef ParentName="BuildingBase" MayRequire="VanillaExpanded.VChemfuelE">
+    <defName>PS_ChemfuelTankCompact</defName>
+    <label>compact chemfuel tank</label>
+    <description>An industrial liquid storage tank meant for storing chemfuel delivered via chemfuel pipe network. Tanks can be designated to be siphoned for usable chemfuel as needed.  If damaged even lightly the escaping fumes will very swiftly create a gaseous fireball, the size of the resulting explosion will depend on the amount stored within.</description>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Things/Building/Production/ChemfuelCompactTank</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <pathCost>50</pathCost>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.40</fillPercent>
+    <tickerType>Normal</tickerType>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <WorkToBuild>600</WorkToBuild>
+      <Mass>15</Mass>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <size>(2,2)</size>
+    <costList>
+      <Steel>100</Steel>
+    </costList>
+    <comps>
+      <li Class="PipeSystem.CompProperties_ResourceStorage">
+        <pipeNet>VCHE_ChemfuelNet</pipeNet>
+        <storageCapacity>3000</storageCapacity>
+        <barSize>(1.0, 0.25)</barSize>
+        <margin>0.1</margin>
+        <centerOffset>(0, 0, 0.15)</centerOffset>
+        <extractOptions>
+          <texPath>UI/Gizmos/ExtractChemfuel</texPath>
+          <labelKey>VCHE_ExtractChemfuel</labelKey>
+          <descKey>VCHE_ExtractChemfuelDesc</descKey>
+          <extractAmount>150</extractAmount>
+          <thing>Chemfuel</thing>
+          <ratio>1</ratio>
+        </extractOptions>
+      </li>
+      <li Class="PipeSystem.CompProperties_ExplosiveContent">
+        <explosiveMaxRadius>12</explosiveMaxRadius>
+        <!-- Vanilla options below -->
+        <explosiveDamageType>Flame</explosiveDamageType>
+        <destroyThingOnExplosionSize>2</destroyThingOnExplosionSize>
+        <startWickHitPointsPercent>0.333</startWickHitPointsPercent>
+        <preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+        <preExplosionSpawnChance>1</preExplosionSpawnChance>
+        <wickTicks>70~150</wickTicks>
+      </li>
+    </comps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>VCHE_PipeNetworks</designationCategory>
+    <staticSunShadowHeight>0.2</staticSunShadowHeight>
+    <constructEffect>ConstructMetal</constructEffect>
+    <canOverlapZones>false</canOverlapZones>
+    <researchPrerequisites>
+      <li>BiofuelRefining</li>
+    </researchPrerequisites>
+    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+  </ThingDef>
+</Defs>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<!-- ================================ Transhumanist Addition Patch ====================== -->
+			<li Class="PatchOperationAdd" MayRequire="ReBuild.COTR.DoorsAndCorners">
+				<xpath>/Defs/StyleCategoryDef[defName="Techist"]/addDesignators</xpath>
+				<value>
+					<li>RB_PavedTile_Transhumanist</li>
+					<li>RB_WoodPlankFloor_Transhumanist</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

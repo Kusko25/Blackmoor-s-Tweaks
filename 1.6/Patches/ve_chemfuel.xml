@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Chemfuel Expanded</li>
+        </mods>
+        <match Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="PS_ChemfuelTankCompact"]/designationCategory</xpath>
+            <value>
+                <designationCategory>Ferny_ChemfuelNetwork</designationCategory>
+            </value>
+        </match>
+    </Operation>
+</Patch>

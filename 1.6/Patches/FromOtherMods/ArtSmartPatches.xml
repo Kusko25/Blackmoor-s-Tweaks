@@ -1,0 +1,33 @@
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/WorkTypeDef[defName="Art"]/disabledForSlaves</xpath>
+				<value>
+					<disabledForSlaves>false</disabledForSlaves>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/WorkTypeDef[defName="Research"]/disabledForSlaves</xpath>
+				<value>
+					<disabledForSlaves>false</disabledForSlaves>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+		  <li>Anomaly</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/WorkTypeDef[defName="DarkStudy"]/disabledForSlaves</xpath>
+				<value>
+					<disabledForSlaves>false</disabledForSlaves>
+				</value>
+			</li>
+			</operations>
+		</match>
+	</Operation>	
+</Patch>

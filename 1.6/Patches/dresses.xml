@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Dresses in the Rim</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+            <operations>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="BellyDance_dress"]/apparel</xpath>
+                    <value>
+                        <countsAsClothingForNudity>false</countsAsClothingForNudity>
+                    </value>
+                </li>
+            </operations>
+        </match>
+    </Operation>
+</Patch>

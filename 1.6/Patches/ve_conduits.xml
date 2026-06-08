@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[thingClass="PipeSystem.Building_Pipe"]/building</xpath>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[thingClass="PipeSystem.Building_Pipe"]/building</xpath>
+            <value>
+                <canConstructInCorner>true</canConstructInCorner>
+            </value>
+        </match>
+    </Operation>
+</Patch>

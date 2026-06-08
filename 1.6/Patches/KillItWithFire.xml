@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/TerrainDef[defName="InsectSludge"]/statBases/Flammability</xpath>
+    <value>
+      <Flammability>0.8</Flammability>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="EggSac"]/statBases/Flammability</xpath>
+    <value>
+      <Flammability>0.8</Flammability>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="BurrowWall"]/statBases/Flammability</xpath>
+    <value>
+      <Flammability>0.8</Flammability>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/TerrainDef[defName="Flesh"]/statBases/Flammability</xpath>
+    <value>
+      <Flammability>0.8</Flammability>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Fleshmass"]/statBases/Flammability</xpath>
+    <value>
+      <Flammability>0.8</Flammability>
+    </value>
+  </Operation>
+</Patch>
